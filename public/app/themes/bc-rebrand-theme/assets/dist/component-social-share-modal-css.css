@@ -1,0 +1,27 @@
+sonic-modal {
+    --icon-modal-height: 24px;
+    --icon-modal-width: 24px;
+}
+    sonic-modal ul li {
+    margin-bottom: 0.5rem;
+}
+    sonic-modal ul li a {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+.social-share img {
+    margin-right: 0.5rem;
+    display: inline;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+@media (min-width: 1024px) {
+    .social-share img {
+        margin-right: 1rem;
+    }
+}
+
+
+/*# sourceMappingURL=component-social-share-modal-css.css.map*/

@@ -1,0 +1,2 @@
+(()=>{const n=document.querySelector(".oneTrustForm");if(n){const o=n.children[0].href;n.addEventListener("click",(n=>{n.preventDefault();const e=function(n){const o=document.cookie.match("(^|;) ?tglr_anon_id=([^;]*)(;|$)");return o?o[2]:null}(),{sourceKey:t}=window._Cohesion,c=`${o}?anonymous_id=${e}&sourceUid=${t}`;window.open(c)}))}})();
+//# sourceMappingURL=one-trust.js.map

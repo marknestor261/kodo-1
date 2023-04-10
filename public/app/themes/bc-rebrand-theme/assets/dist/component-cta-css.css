@@ -1,0 +1,87 @@
+/* Default cta-button is primary */
+.cta-button {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: Lexend Deca, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  background-color: var(--primary-700, #e22944);
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.cta-button:hover {
+  background-color: var(--primary-800, #b02035);
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+.cta-button {
+  font-size: 15px;
+  line-height: 18.75px;
+  padding: 12px 16px;
+}
+.cta-button.ghost {
+  background-color: transparent;
+}
+.cta-button.ghost:hover {
+  background-color: transparent;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+.cta--primary {
+  background-color: var(--primary-700, #e22944);
+}
+.cta--primary .category-text-color {
+  color: var(--secondary-700, #002043);
+}
+.cta--primary .cta-button {
+  background-color: var(--secondary-700, #002043);
+}
+.cta--primary .cta-button:hover {
+  background-color: var(--secondary-800, #001934);
+}
+main > section.cta--hero {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.cta--secondary {
+  background-color: var(--secondary-700, #002043);
+}
+.cta--secondary .category-text-color {
+  color: var(--primary-700, #e22944);
+}
+.cta--secondary .cta-button {
+  background-color: var(--primary-700, #e22944);
+}
+.cta--secondary .cta-button:hover {
+  background-color: var(--primary-800, #b02035);
+}
+.cta--transparent {
+  background: rgba(0, 32, 67, 0.6);
+}
+.cta--homepage {
+  margin-top: 5rem;
+}
+.cta--homepage .left-side .category {
+  font-size: 1.953rem;
+}
+@media (min-width: 768px) {
+  .cta--homepage .left-side .category {
+    font-size: 2.441rem;
+  }
+}
+.cta--homepage .left-side .title {
+  font-size: 3.052rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+@media (min-width: 1024px) {
+  .cta--homepage .left-side .title {
+    font-size: 4.768rem;
+  }
+}
+
+
+/*# sourceMappingURL=component-cta-css.css.map*/

@@ -1,0 +1,133 @@
+.contributors-byline-hero {
+
+    border-color: var(--primary-700, #e22944);
+
+    padding-top: 1.5rem;
+
+    padding-bottom: 1.5rem
+}
+
+  .contributors-byline-hero .contributors-wrapper {
+
+    margin-bottom: 1.5rem;
+
+    display: grid
+}
+
+  @media (min-width: 768px) {
+
+    .contributors-byline-hero .contributors-wrapper {
+
+        grid-auto-flow: column;
+
+        gap: 1rem
+    }
+}
+
+  .contributors-byline-hero .contributors-writers {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1rem
+}
+
+  @media (min-width: 768px) {
+
+    .contributors-byline-hero .contributors-writers {
+
+        width: 100%;
+
+        flex-direction: row;
+
+        align-items: center
+    }
+}
+
+  .contributors-byline-hero .contributors-writers .thumbnails-wrapper {
+
+    display: flex;
+
+    flex-shrink: 0
+}
+
+  .contributors-byline-hero .contributors-writers .thumbnails-wrapper .thumbnail {
+
+    margin-left: -0.625rem
+}
+
+  .contributors-byline-hero .contributors-writers .thumbnails-wrapper .thumbnail:first-child {
+
+    margin-left: 0px
+}
+
+  .contributors-byline-hero .contributors-writers .thumbnails-wrapper .thumbnail > img {
+
+    height: 60px;
+
+    width: 60px;
+
+    border-radius: 9999px;
+
+    border-width: 2px;
+
+    --tw-border-opacity: 1;
+
+    border-color: rgb(255 255 255 / var(--tw-border-opacity));
+
+    --tw-bg-opacity: 1;
+
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+
+  @media (min-width: 768px) {
+
+    .contributors-byline-hero .contributors-others {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-end;
+
+        justify-content: center
+    }
+}
+
+  .contributors-byline-hero .contributors-others {
+
+    width: 100%
+}
+
+  @media (min-width: 768px) {
+
+    .contributors-byline-hero .contributors-others__row {
+
+        text-align: right
+    }
+}
+
+  .contributors-byline-hero .date-wrapper {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.25rem;
+
+    font-size: 0.8rem
+}
+
+  @media (min-width: 768px) {
+
+    .contributors-byline-hero .date-wrapper {
+
+        flex-direction: row;
+
+        justify-content: space-between
+    }
+}
+
+
+/*# sourceMappingURL=component-contributors-byline-hero-css.css.map*/
