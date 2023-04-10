@@ -8,9 +8,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('home.frontend.index');
 // })->name('frontend.index');
 Route::get('/',[\App\Http\Controllers\FrontEndPagesController::class,'homePage'])->name('frontend.index');
-Route::get('about', function () {
-    return view('home.frontend.about');
-})->name('frontend.about');
+// Route::get('about', function () {
+//     return view('home.frontend.about');
+// })->name('frontend.about');
+Route::get('about',[\App\Http\Controllers\FrontEndPagesController::class,'aboutPage'])->name('frontend.about');
+
 
 Route::get('testimonials', function () {
     return view('home.frontend.testimonials');
