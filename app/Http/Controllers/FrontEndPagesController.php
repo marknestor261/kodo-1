@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\HomePage;
 use App\Models\ScholarshipPage;
 use App\Models\AboutPage;
+use App\Models\TestimonialsPage;
 
 class FrontEndPagesController extends Controller
 {
@@ -24,9 +25,16 @@ class FrontEndPagesController extends Controller
 
     public function aboutPage()
     {
-        $aboutPageContent = aboutPage::first();
-        // aboutPage::create();
+        $aboutPageContent = AboutPage::first();
+        // AboutPage::create();
         return view('home.frontend.about', compact('aboutPageContent'));
+    }
+
+    public function testimonialsPage()
+    {
+        $testimonialsPageContent = TestimonialsPage::first();
+        // TestimonialsPage::create();
+        return view('home.frontend.testimonials', compact('testimonialsPageContent'));
     }
 
     

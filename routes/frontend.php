@@ -14,9 +14,11 @@ Route::get('/',[\App\Http\Controllers\FrontEndPagesController::class,'homePage']
 Route::get('about',[\App\Http\Controllers\FrontEndPagesController::class,'aboutPage'])->name('frontend.about');
 
 
-Route::get('testimonials', function () {
-    return view('home.frontend.testimonials');
-})->name('frontend.testimonials');
+// Route::get('testimonials', function () {
+//     return view('home.frontend.testimonials');
+// })->name('frontend.testimonials');
+Route::get('testimonials',[\App\Http\Controllers\FrontEndPagesController::class,'testimonialsPage'])->name('frontend.testimonials');
+
 
 // Route::get('scholarships', function () {
 //     return view('home.frontend.scholarships');
