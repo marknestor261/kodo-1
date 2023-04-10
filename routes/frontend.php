@@ -16,7 +16,9 @@ Route::get('testimonials', function () {
     return view('home.frontend.testimonials');
 })->name('frontend.testimonials');
 
-Route::get('scholarships', function () {
-    return view('home.frontend.scholarships');
-})->name('frontend.scholarships');
+// Route::get('scholarships', function () {
+//     return view('home.frontend.scholarships');
+// })->name('frontend.scholarships');
+Route::get('scholarships',[\App\Http\Controllers\FrontEndPagesController::class,'scholarshipPage'])->name('frontend.scholarships');
+
 // ===========================================================
