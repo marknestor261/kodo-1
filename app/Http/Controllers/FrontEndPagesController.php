@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HomePage;
 use App\Models\ScholarshipPage;
+use App\Models\AboutPage;
 
 class FrontEndPagesController extends Controller
 {
@@ -19,6 +20,13 @@ class FrontEndPagesController extends Controller
         $scholarshipPageContent = ScholarshipPage::first();
         // ScholarshipPage::create();
         return view('home.frontend.scholarships', compact('scholarshipPageContent'));
+    }
+
+    public function aboutPage()
+    {
+        $aboutPageContent = aboutPage::first();
+        // aboutPage::create();
+        return view('home.frontend.about', compact('aboutPageContent'));
     }
 
     
