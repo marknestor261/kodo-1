@@ -4,10 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 
 // FRONTEND ==================================================
-Route::get('/', function () {
-    return view('home.frontend.index');
-})->name('frontend.index');
-
+// Route::get('/', function () {
+//     return view('home.frontend.index');
+// })->name('frontend.index');
+Route::get('/',[\App\Http\Controllers\FrontEndPagesController::class,'homePage'])->name('frontend.index');
 Route::get('about', function () {
     return view('home.frontend.about');
 })->name('frontend.about');
