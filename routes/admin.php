@@ -8,6 +8,8 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function() {
     // 
     Route::get('dashboard', function () { return view('admin.dashboard.dashboard');
      })->name('admin.dashboard');
+     Route::get('about-edit', function () { return view('admin.dashboard.pages.about-edit');})->name('admin.about-edit');
+     Route::get('home-edit', function () { return view('admin.dashboard.pages.home-edit');})->name('admin.home-edit');
     Route::controller(AdminController::class)->group(function() {
         Route::get('create-scholarship', 'createScholarship')->name('admin.create-scholarship');
         Route::post('create-scholarship', 'storeScholarship')->name('admin.create.scholarship');

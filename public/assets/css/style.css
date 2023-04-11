@@ -203,6 +203,10 @@ html {
     color: var(--primary-bg-color) !important;
 }
 
+.card-header.border-bottom {
+    margin-bottom: 0.4rem;
+}
+
 /*------------------ END MY CSS --------------------------------*/
 
 
