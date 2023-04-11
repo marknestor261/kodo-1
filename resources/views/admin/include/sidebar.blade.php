@@ -47,8 +47,8 @@
 						<span class="side-menu__label">Edit Pages</span><i class="angle fa fa-angle-right"></i>
 					</a>
 					<ul class="slide-menu">
-						<li><a href="#!" class="slide-item">Home</a></li>
-						<li><a href="#!" class="slide-item">About</a></li>
+						<li><a href={{ route('admin.home-edit') }} class="slide-item">Home</a></li>
+						<li><a href={{ route('admin.about-edit') }} class="slide-item">About</a></li>
 						<li><a href="#!" class="slide-item">Testimonials</a></li>
 						<li><a href="#!" class="slide-item">Scholarships</a></li>
 						<li><a href="#!" class="slide-item">Login</a></li>

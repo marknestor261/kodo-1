@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('admin.layouts.master', ["create" => true])
 
 @push('plugin-styles')
 
@@ -31,7 +31,7 @@
 							<div class="row">
 								<div class="col-lg-12 col-md-12">
 									<div  class="card">
-										<div class="card-header border-bottom"  style="background-color: #E984B1;color:white;margin-top:0.5rem; border-top-left-radius:0.5rem;border-top-right-radius:0.5rem;">
+										<div class="card-header border-bottom">
 											<h4 class="mb-0">Top Section</h4>
 										</div>
 										<div class="card-body p-0 project-edit-main">
@@ -40,7 +40,7 @@
 													<div class="form-group">
 														<label for="project-name" class="form-label text-muted">Title </label>
 														<div class="input-group">
-															<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+															<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 														</div>
 													</div>
 												</div>
@@ -48,7 +48,7 @@
 													<div class="form-group">
 														<label for="project-name" class="form-label text-muted">Subtitle </label>
 														<div class="input-group">
-															<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+															<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 														</div>
 													</div>
 												</div>
@@ -82,7 +82,7 @@
 													</div>
 												</div>
 
-												<div class="card-header border-bottom"  style="background-color: #59ADEC;color:white;margin-top:0.5rem; border-top-left-radius:0.5rem;border-top-right-radius:0.5rem;">
+												<div class="card-header border-bottom">
 													<h4 class="mb-0">Mission / History Section</h4>
 												</div>
 
@@ -90,7 +90,7 @@
 															<div class="form-group">
 																<label for="project-name" class="form-label text-muted">Mission Subtext </label>
 																<div class="input-group">
-																	<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																	<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 																</div>
 															</div>
 														</div>
@@ -98,7 +98,7 @@
 															<div class="form-group">
 																<label for="project-name" class="form-label text-muted">History Subtext </label>
 																<div class="input-group">
-																	<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																	<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 																</div>
 															</div>
 														</div>
@@ -132,14 +132,14 @@
 												</div>
 
 
-														<div class="card-header border-bottom"  style="background-color: #343A40;color:white;margin-top:0.5rem; border-top-left-radius:0.5rem;border-top-right-radius:0.5rem;">
+														<div class="card-header border-bottom">
 															<h4 class="mb-0">Academic section</h4>
 														</div>
 																<div class="col-sm-12 col-md-12 col-xl-6">
 																	<div class="form-group">
 																		<label for="project-name" class="form-label text-muted">Title </label>
 																		<div class="input-group">
-																			<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																			<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 																		</div>
 																	</div>
 																</div>
@@ -147,25 +147,25 @@
 																	<div class="form-group">
 																		<label for="project-name" class="form-label text-muted">Subtitle </label>
 																		<div class="input-group">
-																			<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																			<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 																		</div>
 																	</div>
 																</div>
 
-																<div class="card-header border-bottom"  style="background-color: #4ECC48;color:white;margin-top:0.5rem; border-top-left-radius:0.5rem;border-top-right-radius:0.5rem;">
+																<div class="card-header border-bottom">
 																	<h4 class="mb-0">Icons section</h4>
 																</div>
 																		<div class="col-sm-12 col-md-12 col-xl-3">
 																			<div class="form-group">
 																				<label for="project-name" class="form-label text-muted">People Figure </label>
 																				<div class="input-group">
-																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 																				</div>
 																			</div>
 																			<div class="form-group">
 																				<label for="project-name" class="form-label text-muted">People Text </label>
 																				<div class="input-group">
-																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 																				</div>
 																			</div>
 																		</div>
@@ -174,13 +174,13 @@
 																			<div class="form-group">
 																				<label for="project-name" class="form-label text-muted">Thumbs-up Figure </label>
 																				<div class="input-group">
-																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 																				</div>
 																			</div>
 																			<div class="form-group">
 																				<label for="project-name" class="form-label text-muted">Thumbs-up Text </label>
 																				<div class="input-group">
-																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 																				</div>
 																			</div>
 																		</div>
@@ -189,13 +189,13 @@
 																			<div class="form-group">
 																				<label for="project-name" class="form-label text-muted">Degree Figure </label>
 																				<div class="input-group">
-																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 																				</div>
 																			</div>
 																			<div class="form-group">
 																				<label for="project-name" class="form-label text-muted">Degree Text </label>
 																				<div class="input-group">
-																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 																				</div>
 																			</div>
 																		</div>
@@ -204,18 +204,18 @@
 																			<div class="form-group">
 																				<label for="project-name" class="form-label text-muted">World Figure </label>
 																				<div class="input-group">
-																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 																				</div>
 																			</div>
 																			<div class="form-group">
 																				<label for="project-name" class="form-label text-muted">World Text </label>
 																				<div class="input-group">
-																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 																				</div>
 																			</div>
 																		</div>
 
-																		<div class="card-header border-bottom" style="background-color: #FBB034;color:white;margin-top:0.5rem; border-top-left-radius:0.5rem;border-top-right-radius:0.5rem;">
+																		<div class="card-header border-bottom">
 																			<h4 class="mb-0">Career section</h4>
 																		</div>
 
@@ -223,7 +223,7 @@
 																			<div class="form-group">
 																				<label for="project-name" class="form-label text-muted">Title Subtext </label>
 																				<div class="input-group">
-																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 																				</div>
 																			</div>
 																		</div>
@@ -232,7 +232,7 @@
 																			<div class="form-group">
 																				<label for="project-name" class="form-label text-muted">Programs Subtext </label>
 																				<div class="input-group">
-																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 																				</div>
 																			</div>
 																		</div>
@@ -242,7 +242,7 @@
 																			<div class="form-group">
 																				<label for="project-name" class="form-label text-muted">Opportunities Subtext </label>
 																				<div class="input-group">
-																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																					<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter text" value="">
 																				</div>
 																			</div>
 																		</div>
@@ -251,7 +251,7 @@
 										
 											<div class="row p-5">
 												<div class="btn-list text-end">
-													<button class="btn btn-primary">
+													<button class="btn btn-lg btn-primary">
 														<i class="fe fe-check-circle"></i>
 														Save
 													</button>

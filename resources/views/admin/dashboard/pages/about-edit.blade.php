@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('admin.layouts.master', ['create' => true])
 
 @push('plugin-styles')
 
@@ -8,6 +8,7 @@
     <!--app-content open-->
     <div class="app-content main-content mt-0">
 		<div class="side-app">
+            
 			<!-- CONTAINER -->
 			<div class="main-container container-fluid">
                 	<!-- PAGE-HEADER -->
@@ -38,7 +39,7 @@
 													<div class="form-group">
 														<label for="project-name" class="form-label text-muted">Title </label>
 														<div class="input-group">
-															<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+															<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Text" value="">
 														</div>
 													</div>
 												</div>
@@ -46,7 +47,7 @@
 													<div class="form-group">
 														<label for="project-name" class="form-label text-muted">Subtitle </label>
 														<div class="input-group">
-															<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+															<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Text" value="">
 														</div>
 													</div>
 												</div>
@@ -55,7 +56,7 @@
 															<div class="form-group">
 																<label for="project-name" class="form-label text-muted">Mission Subtext </label>
 																<div class="input-group">
-																	<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																	<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Text" value="">
 																</div>
 															</div>
 														</div>
@@ -63,7 +64,7 @@
 															<div class="form-group">
 																<label for="project-name" class="form-label text-muted">Vision Subtext </label>
 																<div class="input-group">
-																	<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																	<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Text" value="">
 																</div>
 															</div>
 														</div>
@@ -76,7 +77,7 @@
 																	<div class="form-group">
 																		<label for="project-name" class="form-label text-muted">Title </label>
 																		<div class="input-group">
-																			<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																			<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Text" value="">
 																		</div>
 																	</div>
 																</div>
@@ -84,7 +85,7 @@
 																	<div class="form-group">
 																		<label for="project-name" class="form-label text-muted">Subtitle </label>
 																		<div class="input-group">
-																			<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Project Name" value="">
+																			<input type="text" id="project-name" class="form-control text-dark" placeholder="Enter Text" value="">
 																		</div>
 																	</div>
 																</div>
@@ -169,7 +170,7 @@
 										
 											<div class="row p-5">
 												<div class="btn-list text-end">
-													<button class="btn btn-primary">
+													<button class="btn btn-lg btn-primary">
 														<i class="fe fe-check-circle"></i>
 														Save
 													</button>
