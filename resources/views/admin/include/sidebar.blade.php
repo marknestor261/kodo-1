@@ -49,8 +49,8 @@
 					<ul class="slide-menu">
 						<li><a href={{ route('admin.home-edit') }} class="slide-item">Home</a></li>
 						<li><a href={{ route('admin.about-edit') }} class="slide-item">About</a></li>
-						<li><a href="#!" class="slide-item">Testimonials</a></li>
-						<li><a href="#!" class="slide-item">Scholarships</a></li>
+						<li><a href={{ route('admin.testimonials-edit') }} class="slide-item">Testimonials</a></li>
+						<li><a href={{ route('admin.scholarships-edit') }} class="slide-item">Scholarships</a></li>
 						<li><a href="#!" class="slide-item">Login</a></li>
 					</ul>
 				</li>
