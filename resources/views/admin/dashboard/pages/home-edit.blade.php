@@ -18,8 +18,7 @@
 								</div>
 								<div class="ms-auto pageheader-btn">
 									<ol class="breadcrumb">
-										<!-- <li class="breadcrumb-item">Apps</li> -->
-										<li class="breadcrumb-item"><a href="javascript:void(0);">Admin</a></li>
+										<li class="breadcrumb-item"><a href={{ route('admin.dashboard') }}>Admin</a></li>
 										<li class="breadcrumb-item active" aria-current="page">Edit Home</li>
 									</ol>
 								</div>
