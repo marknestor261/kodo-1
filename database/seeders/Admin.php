@@ -2,6 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\AboutPage;
+use App\Models\HomePage;
+use App\Models\ScholarshipPage;
+use App\Models\TestimonialsPage;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\UserMetaData;
@@ -32,5 +36,11 @@ class Admin extends Seeder
             'interest' => 'Education',
             'subject' => 'Computer Science'
         ]);
+
+        HomePage::create([]);
+        ScholarshipPage::create([]);
+        AboutPage::create([]);
+        TestimonialsPage::create([]);
+
     }
 }
