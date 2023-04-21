@@ -5,20 +5,9 @@ use App\Http\Controllers\AdminController;
 
 
 Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function() {
-    // 
-    Route::get('dashboard', function () { return view('admin.dashboard.dashboard');
-     })->name('admin.dashboard');
-     Route::get('about-edit', function () { return view('admin.dashboard.pages.about-edit');})->name('admin.about-edit');
-     Route::get('home-edit', function () { return view('admin.dashboard.pages.home-edit');})->name('admin.home-edit');
-     Route::get('testimonials-edit', function () { return view('admin.dashboard.pages.testimonials-edit');})->name('admin.testimonials-edit');
-     Route::get('scholarships-edit', function () { return view('admin.dashboard.pages.scholarships-edit');})->name('admin.scholarships-edit');
-     // 
-
-     Route::get('settings', function () { return view('admin.dashboard.settings.general');})->name('admin.settings.general');
-     Route::get('admin/settings/auth', function () { return view('admin.dashboard.settings.auth');})->name('admin.settings.auth');
-     Route::get('admin/settings/mail', function () { return view('admin.dashboard.settings.mail');})->name('admin.settings.mail');
-     Route::get('admin/settings/payments', function () { return view('admin.dashboard.settings.payments');})->name('admin.settings.payments');
     Route::controller(AdminController::class)->group(function() {
+        // dashboard
+        Route::get('dashboard', 'dashboard')->name('admin.dashboard');
         // scholarship routes
         Route::get('create-scholarship', 'createScholarship')->name('admin.create-scholarship');
         Route::post('create-scholarship', 'storeScholarship')->name('admin.create.scholarship');
@@ -30,8 +19,16 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function() {
         Route::get('edit-scholarship/{program_id}', 'editScholarship')->name('admin.edit-scholarship');
         Route::post('edit-scholarship/{program_id}', 'updateScholarship')->name('admin.edit.scholarship');
         // edit pages routes
+        Route::get('about-edit', 'aboutEdit')->name('admin.about-edit');
+        Route::get('home-edit', 'homeEdit')->name('admin.home-edit');
+        Route::get('testimonials-edit', 'testimonialsEdit')->name('admin.testimonials-edit');
+        Route::get('scholarships-edit', 'scholarshipsEdit')->name('admin.scholarships-edit');
 
         // settings routes
+        Route::get('settings', 'settingsGeneral')->name('admin.settings.general');
+        Route::get('admin/settings/auth', 'settingsAuth')->name('admin.settings.auth');
+        Route::get('admin/settings/mail', 'settingsMail')->name('admin.settings.mail');
+        Route::get('admin/settings/payments', 'settingsPayment')->name('admin.settings.payments');
 
     });
 });

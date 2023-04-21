@@ -19,5 +19,9 @@ Route::middleware('auth')->controller(DashboardController::class)->group(functio
     Route::get('save-scholarship/{program_id}', 'saveProgram')->name('user.save');
     Route::get('unsave-scholarship/{program_id}', 'unsaveProgram')->name('user.unsave');
     Route::get('unban-scholarship/{program_id}', 'unbanProgram')->name('user.unban');
+
+    // PAYMENTS
     Route::get('payment', function () { return view('dashboard.user.user_payment'); })->name('payment');
+    Route::post('/pay-with-flutterwave', 'PaymentController@payWithFlutterwave')->name('flutterwave.pay');
+
 });
