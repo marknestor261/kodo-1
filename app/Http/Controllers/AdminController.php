@@ -86,5 +86,59 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+
+    public function dashboard()
+    {
+        return view('admin.dashboard.dashboard');
+    }
+
+     public function aboutEdit()
+    {
+        $about = AboutPage::first();
+        dd($about);
+        return view('admin.dashboard.pages.about-edit');
+    }
+
+    public function homeEdit()
+    {
+        return view('admin.dashboard.pages.home-edit');
+    }
+
+    public function testimonialsEdit()
+    {
+        return view('admin.dashboard.pages.testimonials-edit');
+    }
+
+    public function scholarshipsEdit()
+    {
+        return view('admin.dashboard.pages.scholarships-edit');
+    }
+
+    public function settingsGeneral()
+    {
+        return view('admin.dashboard.settings.general');
+    }
+
+     public function settingsAuth()
+    {
+        return view('admin.dashboard.settings.auth');
+    }
+
+
+     public function settingsMail()
+    {
+        return view('admin.dashboard.settings.mail');
+    }
+
+
+     public function settingsPayment()
+    {
+        return view('admin.dashboard.settings.payments');
+    }
+
+    public function aboutUpdate(Request $request)
+    {
+        # code...
+    }
     
 }
