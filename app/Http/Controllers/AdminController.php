@@ -18,13 +18,24 @@ class AdminController extends Controller
 
     public function storeScholarship(Request $request)
     {
-        $validated = $request->validate([
+        $rules = [
             'title' => 'required|min:2',
             'about' => 'required',
             'award' => 'required',
             'deadline' => 'required',
             'link' => 'required'
-        ]);
+        ];
+        
+        $messages = [
+            'title.required' => 'The title field is required.',
+            'title.min' => 'The title must be at least 3 characters.',
+            'about.required' => 'The about field is required.',
+            'award.required' => 'The award field is required.',
+            'deadline.required' => 'The deadline field is required.',
+            'link.required' => 'The link field is required.',
+        ];
+        
+        $validated = $request->validate($rules, $messages);
         $program = AdminHelper::createScholarship($validated);
         session(['success' => 'Scholarship created successfully']);
         return redirect()->back();
@@ -74,13 +85,23 @@ class AdminController extends Controller
 
     public function updateScholarship(Request $request, $program_id)
     {
-        $validated = $request->validate([
+        $rules = [
             'title' => 'required|min:2',
             'about' => 'required',
             'award' => 'required',
             'deadline' => 'required',
             'link' => 'required'
-        ]);
+        ];
+        
+        $messages = [
+            'title.required' => 'The title field is required.',
+            'title.min' => 'The title must be at least 3 characters.',
+            'about.required' => 'The about field is required.',
+            'award.required' => 'The award field is required.',
+            'deadline.required' => 'The deadline field is required.',
+            'link.required' => 'The link field is required.',
+        ];
+        $validated = $request->validate($rules, $messages);
         $program = AdminHelper::updateScholarship($validated, $program_id);
         session(['success' => 'Scholarship updated successfully']);
         return redirect()->back();

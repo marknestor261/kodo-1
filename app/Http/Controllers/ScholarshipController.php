@@ -36,13 +36,23 @@ class ScholarshipController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'title' => 'required|max:255',
+        $rules = [
+            'title' => 'required|min:2',
+            'about' => 'required',
             'award' => 'required',
             'deadline' => 'required',
             'link' => 'required'
-        ]);
-
+        ];
+        
+        $messages = [
+            'title.required' => 'The title field is required.',
+            'title.min' => 'The title must be at least 3 characters.',
+            'about.required' => 'The about field is required.',
+            'award.required' => 'The award field is required.',
+            'deadline.required' => 'The deadline field is required.',
+            'link.required' => 'The link field is required.',
+        ];
+        $validated = $request->validate($rules, $messages);
         Scholarship::create([
             'title' => $validated['title'],
             'about' => $validated['about'],
