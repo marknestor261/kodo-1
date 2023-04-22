@@ -14,6 +14,8 @@ Route::middleware('auth')->controller(DashboardController::class)->group(functio
     // these two is_paid middleware
     Route::get('scholarships/{program_id}', 'scholarship')->name('user.scholarship');
     Route::get('apply-scholarship/{program_id}', 'applyProgram')->name('user.apply');
+    Route::get('jobs/{job_id}', 'scholarship')->name('user.job');
+    Route::get('apply-job/{job_id}', 'applyProgram')->name('user.apply.job');
     // ========================
     Route::get('ban-scholarship/{program_id}', 'banProgram')->name('user.ban');
     Route::get('save-scholarship/{program_id}', 'saveProgram')->name('user.save');
