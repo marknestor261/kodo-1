@@ -85,3 +85,4 @@ class StepController extends Controller
         return redirect(RouteServiceProvider::HOME);
     }
 }
+
