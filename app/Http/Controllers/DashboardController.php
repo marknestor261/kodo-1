@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Scholarship;
 use App\Models\User;
 use App\Models\UserMetaData;
+use App\Models\Job;
 use Carbon\Carbon;
 use App\Http\Helpers\DashboardHelper;
 
@@ -95,6 +96,88 @@ class DashboardController extends Controller
         DashboardHelper::setAction('apply', $program_id, auth()->user()->id);
         session(['success' => 'Scholarship applied to successfully']);
         $program = Scholarship::find($program_id);
+        return redirect()->away($program->link);
+    }
+
+
+    /// JOBS
+
+    public function indexJobs() {
+        $programs = Job::where('published', 1)->get();
+        $programs = DashboardHelper::multipleJobResults($programs, auth()->user()->id);
+        return view('user.dashboard.jobs.dashboard', compact('programs'));
+    }
+
+    public function matchedJobs() {
+        $programs = Job::where('published', 1)->get();
+        $programs = DashboardHelper::multipleJobResults($programs, auth()->user()->id);
+        return view('user.dashboard.jobs.matched', compact('programs'));
+    }
+
+    public function savedJobs() {
+        $programs = DashboardHelper::singleJobStatus('saved', auth()->user()->id);
+        return view('user.dashboard.jobs.saved', compact('programs'));
+    }
+
+    public function bannedJobs() {
+        $programs = DashboardHelper::singleJobStatus('banned', auth()->user()->id, true);
+        return view('user.dashboard.jobs.banned', compact('programs'));
+    }
+
+    public function appliedJobs() {
+        $programs = DashboardHelper::singleJobStatus('applied', auth()->user()->id);
+        return view('user.dashboard.jobs.applied', compact('programs'));
+    }
+
+    public function job($program_id)
+    {
+        $x = DashboardHelper::singleJobResult($program_id, auth()->user()->id);
+        return view('user.dashboard.jobs.job
+        ', compact('x'));
+    }
+
+    public function searchJobs(Request $request)
+    {
+        $validated = $request->validate([
+            'term' => 'required|min:2',
+        ]);
+        $programs = DashboardHelper::searchJobs($validated, auth()->user()->id);
+        return view('user.dashboard.jobs.search', compact('programs'));
+    }
+
+    public function saveJob($program_id)
+    {
+        DashboardHelper::setJobAction('save', $program_id, auth()->user()->id);
+        session(['success' => 'Job saved successfully']);
+        return redirect()->back();
+    }
+
+    public function unsaveJob($program_id)
+    {
+        DashboardHelper::setJobAction('unsave', $program_id, auth()->user()->id);
+        session(['success' => 'Job unsaved successfully']);
+        return redirect()->back();
+    }
+
+    public function banJob($program_id)
+    {
+        DashboardHelper::setJobAction('ban', $program_id, auth()->user()->id);
+        session(['success' => 'Job banned successfully']);
+        return redirect()->back();
+    }
+
+    public function unbanJob($program_id)
+    {
+        DashboardHelper::setJobAction('unban', $program_id, auth()->user()->id);
+        session(['success' => 'Job unbanned successfully' ]);
+        return redirect()->back();
+    }
+
+    public function applyJob($program_id)
+    {
+        DashboardHelper::setJobAction('apply', $program_id, auth()->user()->id);
+        session(['success' => 'Job applied to successfully']);
+        $program = Job::find($program_id);
         return redirect()->away($program->link);
     }
 }
