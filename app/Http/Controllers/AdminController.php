@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Scholarship;
 use App\Models\User;
 use App\Models\UserMetaData;
+use App\Models\Job;
 use Carbon\Carbon;
 use App\Http\Helpers\AdminHelper;
 
@@ -160,6 +161,91 @@ class AdminController extends Controller
     public function aboutUpdate(Request $request)
     {
         # code...
+    }
+
+    ///  JOBS
+
+    public function createJob()
+    {
+        return view('admin.dashboard.create-job');
+    }
+
+    public function storeJob(Request $request)
+    {
+        $rules = [
+            'title' => 'required|min:2',
+            'about' => 'required',
+            'link' => 'required'
+        ];
+        $messages = [
+            'title.required' => 'The title field is required.',
+            'title.min' => 'The title must be at least 3 characters.',
+            'about.required' => 'The about field is required.',
+            'link.required' => 'The link field is required.',
+        ];
+        $validated = $request->validate($rules, $messages);
+        $program = AdminHelper::createJob($validated);
+        session(['success' => 'Job created successfully']);
+        return redirect()->back();
+    }
+
+    public function allJobs()
+    {
+        $programs = Job::get();
+        return view('admin.dashboard.all-jobs', compact('programs'));
+    }
+
+    public function publishedJobs()
+    {
+        $programs = Job::where('published', 1)->get();
+        return view('admin.dashboard.published-jobs', compact('programs'));
+    }
+
+    public function unpublishedJobs()
+    {
+        $programs = Scholarship::where('published', 0)->get();
+        return view('admin.dashboard.unpublished-jobs', compact('programs'));
+    }
+
+    
+    public function publishJob($job_id)
+    {
+        AdminHelper::setJobAction('publish', $job_id);
+        session(['success' => 'Job published successfully']);
+        return redirect()->back();
+    }
+
+    public function unpublishJob($job_id)
+    {
+        AdminHelper::setJobAction('unpublish', $job_id);
+        session(['success' => 'Job unpublished successfully']);
+        return redirect()->back();
+    }
+
+    public function editJob($job_id)
+    {
+        $x = Job::find($job_id);
+        return view('admin.dashboard.edit-job', compact('x'));
+    }
+
+    public function updateJob(Request $request, $job_id)
+    {
+        $rules = [
+            'title' => 'required|min:2',
+            'about' => 'required',
+            'link' => 'required'
+        ];
+        
+        $messages = [
+            'title.required' => 'The title field is required.',
+            'title.min' => 'The title must be at least 3 characters.',
+            'about.required' => 'The about field is required.',
+            'link.required' => 'The link field is required.',
+        ];
+        $validated = $request->validate($rules, $messages);
+        $program = AdminHelper::updateJob($validated, $job_id);
+        session(['success' => 'Job updated successfully']);
+        return redirect()->back();
     }
     
 }
