@@ -41,9 +41,7 @@ class AdminHelper
         $program = Job::create([
             'title' => $validated['title'],
             'about' => $validated['about'],
-            'award' => $validated['award'],
             'link' => $validated['link'],
-            'deadline' => Carbon::parse($validated['deadline'])
         ]);
 
         return $program;

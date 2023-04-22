@@ -163,11 +163,13 @@ class AdminController extends Controller
         # code...
     }
 
+    /// =========================
     ///  JOBS
+    /// =========================
 
     public function createJob()
     {
-        return view('admin.dashboard.create-job');
+        return view('admin.dashboard.jobs.create-job');
     }
 
     public function storeJob(Request $request)
@@ -192,19 +194,19 @@ class AdminController extends Controller
     public function allJobs()
     {
         $programs = Job::get();
-        return view('admin.dashboard.all-jobs', compact('programs'));
+        return view('admin.dashboard.jobs.all-jobs', compact('programs'));
     }
 
     public function publishedJobs()
     {
         $programs = Job::where('published', 1)->get();
-        return view('admin.dashboard.published-jobs', compact('programs'));
+        return view('admin.dashboard.jobs.published-jobs', compact('programs'));
     }
 
     public function unpublishedJobs()
     {
-        $programs = Scholarship::where('published', 0)->get();
-        return view('admin.dashboard.unpublished-jobs', compact('programs'));
+        $programs = Job::where('published', 0)->get();
+        return view('admin.dashboard.jobs.unpublished-jobs', compact('programs'));
     }
 
     
@@ -225,7 +227,7 @@ class AdminController extends Controller
     public function editJob($job_id)
     {
         $x = Job::find($job_id);
-        return view('admin.dashboard.edit-job', compact('x'));
+        return view('admin.dashboard.jobs.edit-job', compact('x'));
     }
 
     public function updateJob(Request $request, $job_id)

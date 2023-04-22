@@ -30,6 +30,17 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function() {
         Route::get('admin/settings/mail', 'settingsMail')->name('admin.settings.mail');
         Route::get('admin/settings/payments', 'settingsPayment')->name('admin.settings.payments');
 
+        // job routes
+        Route::get('create-job', 'createJob')->name('admin.create-job');
+        Route::post('create-job', 'storeJob')->name('admin.create.job');
+        Route::get('all-jobs', 'allJobs')->name('admin.all-jobs');
+        Route::get('published-jobs', 'publishedJobs')->name('admin.published-jobs');
+        Route::get('unpublished-jobs', 'unpublishedJobs')->name('admin.unpublished-jobs');
+        Route::get('publish-job/{job_id}', 'publishJob')->name('admin.publish.job');
+        Route::get('unpublish-job/{job_id}', 'unpublishJob')->name('admin.unpublish.job');
+        Route::get('edit-job/{job_id}', 'editJob')->name('admin.edit-job');
+        Route::post('edit-job/{job_id}', 'updateJob')->name('admin.edit.job');
+
     });
 });
 
