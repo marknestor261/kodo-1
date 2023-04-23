@@ -13,13 +13,12 @@
                 <!-- PAGE-HEADER -->
 				<div class="page-header">
 					<div>
-						<h1 class="page-title">Jobs you applied to</h1>
+						<h1 class="page-title">Search Results</h1>
 					</div>
 					<div class="ms-auto pageheader-btn">
 						<ol class="breadcrumb">
-							<!-- <li class="breadcrumb-item">Apps</li>
-							<li class="breadcrumb-item"><a href="javascript:void(0);">Invoices</a></li> -->
-							<li class="breadcrumb-item active" aria-current="page">Applied</li>
+							<li class="breadcrumb-item"><a href={{ route('dashboard') }}>Dashboard</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Search</li>
 						</ol>
 					</div>
 				</div>
@@ -27,7 +26,6 @@
                 
 				<!-- ROW-1 OPEN -->
 				<div class="row">
-                    
                     @foreach ($programs as $x)
                         @include('user.components.job', ['x' => $x])
                     @endforeach
