@@ -13,6 +13,8 @@ class AboutPage extends Model
 
         'section1_main_text1',
         'section1_subtext',
+        'section1_subtext2',
+
         
         'section2_main_text1',
         'section2_main_text2',

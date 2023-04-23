@@ -45,7 +45,7 @@ class CreateHomePagesTable extends Migration
             $table->string('section3_graduated_students')->default("115K");
             $table->string('section3_professional_lecturer')->default("85");
 
-            $table->string('section4_main_text1')->default("Start Your New Career With Kodo");
+            $table->string('section4_main_text1')->default("Start Your New Career");
             $table->string('section4_main_text2')->default("Scholarship Programs");
             $table->string('section4_main_text3')->default("Career Opportunities");
             $table->string('section4_subtext1')->default("Lorem ipsum dolor sit amet, consectetur adipiscing elit");

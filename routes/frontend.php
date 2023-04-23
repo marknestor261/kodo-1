@@ -26,3 +26,12 @@ Route::get('testimonials',[\App\Http\Controllers\FrontEndPagesController::class,
 Route::get('scholarships',[\App\Http\Controllers\FrontEndPagesController::class,'scholarshipPage'])->name('frontend.scholarships');
 
 // ===========================================================
+
+
+Route::get('faq',[\App\Http\Controllers\FrontEndPagesController::class,'faqPage'])->name('frontend.faq');
+
+Route::get('testimonial',[\App\Http\Controllers\FrontEndPagesController::class,'testimonialPage'])->name('frontend.testimonial');
+
+Route::get('contact',[\App\Http\Controllers\FrontEndPagesController::class,'contactPage'])->name('frontend.contact');
+
+Route::get('blog',[\App\Http\Controllers\FrontEndPagesController::class,'blogPage'])->name('frontend.blog');
