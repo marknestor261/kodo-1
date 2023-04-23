@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PaymentController;
+
 
 Route::middleware('auth')->controller(DashboardController::class)->group(function() {
     Route::get('dashboard', 'index')->name('dashboard');
@@ -25,9 +27,11 @@ Route::middleware('auth')->controller(DashboardController::class)->group(functio
 
     // PAYMENTS
     Route::get('payment', function () { return view('dashboard.user.user_payment'); })->name('payment');
-    Route::post('/pay-with-flutterwave', 'PaymentController@payWithFlutterwave')->name('flutterwave.pay');
 
 });
+Route::post('/pay-with-flutterwave', 'PaymentController@payWithFlutterwave')->name('flutterwave.pay');
+Route::get('/flutterwave/callback', 'PaymentController@handleFlutterwaveCallback')->name('flutterwave.callback');
+
 
 Route::middleware(['auth', 'is_job'])->controller(DashboardController::class)->prefix('jobs')->group(function() {
     Route::get('dashboard', 'indexJobs')->name('dashboard.jobs');
