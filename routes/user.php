@@ -11,6 +11,7 @@ Route::middleware('auth')->controller(DashboardController::class)->group(functio
     Route::get('matched', 'matched')->name('matched');
     Route::get('profile', 'profile')->name('user.profile');
     Route::post('search', 'search')->name('user.search.scholarship');
+    // jobs middleware
     // these two is_paid middleware
     Route::get('scholarships/{program_id}', 'scholarship')->name('user.scholarship');
     Route::get('apply-scholarship/{program_id}', 'applyProgram')->name('user.apply');
@@ -26,4 +27,18 @@ Route::middleware('auth')->controller(DashboardController::class)->group(functio
     Route::get('payment', function () { return view('dashboard.user.user_payment'); })->name('payment');
     Route::post('/pay-with-flutterwave', 'PaymentController@payWithFlutterwave')->name('flutterwave.pay');
 
+});
+
+Route::middleware(['auth', 'is_job'])->controller(DashboardController::class)->prefix('jobs')->group(function() {
+    Route::get('dashboard', 'indexJobs')->name('dashboard.jobs');
+    Route::get('saved', 'savedJobs')->name('saved.jobs');
+    Route::get('banned', 'bannedJobs')->name('banned.jobs');
+    Route::get('applied', 'appliedJobs')->name('applied.jobs');
+    Route::get('matched', 'matchedJobs')->name('matched.jobs');
+    Route::post('search', 'searchJobs')->name('user.search.jobs');
+    
+    Route::get('ban-job/{program_id}', 'banJob')->name('user.ban.job');
+    Route::get('save-job/{program_id}', 'saveJob')->name('user.save.job');
+    Route::get('unsave-job/{program_id}', 'unsaveJob')->name('user.unsave.job');
+    Route::get('unban-job/{program_id}', 'unbanJob')->name('user.unban.job');
 });

@@ -13,13 +13,13 @@
                 <!-- PAGE-HEADER -->
 				<div class="page-header">
 					<div>
-						<h1 class="page-title">Jobs you applied to</h1>
+						<h1 class="page-title">Favorite Jobs </h1>
 					</div>
 					<div class="ms-auto pageheader-btn">
 						<ol class="breadcrumb">
 							<!-- <li class="breadcrumb-item">Apps</li>
 							<li class="breadcrumb-item"><a href="javascript:void(0);">Invoices</a></li> -->
-							<li class="breadcrumb-item active" aria-current="page">Applied</li>
+							<li class="breadcrumb-item active" aria-current="page">Favorites</li>
 						</ol>
 					</div>
 				</div>

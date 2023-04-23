@@ -13,7 +13,7 @@
                 <!-- PAGE-HEADER -->
 				<div class="page-header">
 					<div>
-						<h1 class="page-title">Jobs you applied to</h1>
+						<h1 class="page-title">Scholarships you applied to</h1>
 					</div>
 					<div class="ms-auto pageheader-btn">
 						<ol class="breadcrumb">
@@ -29,7 +29,7 @@
 				<div class="row">
                     
                     @foreach ($programs as $x)
-                        @include('user.components.job', ['x' => $x])
+                        @include('user.components.tile', ['x' => $x])
                     @endforeach
                 </div>
             </div>
