@@ -33,16 +33,22 @@
                     <h4 class="mb-0">{{ '$ '.$x->award }}</h4>
                 </div>
                 <div>
-                    <a href={{ route('user.scholarship', ['program_id' => $x->id]) }} class="btn btn-info">Apply</a>
-                    <!-- <a href="javascript:void(0)" class="btn btn-dark">Upgrade</a> -->
+                    @if(auth()->user()->is_paid)
+                        <a href={{ route('user.scholarship', ['program_id' => $x->id]) }} class="btn btn-info">Apply</a>
+                    @else
+                        <a href={{ route('payment.plans') }} class="btn btn-dark">Upgrade</a> 
+                    @endif
                 </div>
             </div>
             <hr class="mt-0 mb-0">
             <div class="d-sm-flex align-items-center justify-content-between py-5 px-6">
                 <div class="d-flex align-items-center">
                     <div class="me-2">
-                        <!-- <img alt="User Avatar" class="rounded-circle avatar-lg" src={{ asset("assets/images/users/unlock.png") }}> -->
-                        <img alt="User Avatar" class="rounded-circle avatar-lg" src={{ asset("assets/images/users/lock.png") }}>
+                        @if(auth()->user()->is_paid)
+                            <img alt="User Avatar" class="rounded-circle avatar-lg" src={{ asset("assets/images/users/unlock.png") }}>
+                        @else
+                            <img alt="User Avatar" class="rounded-circle avatar-lg" src={{ asset("assets/images/users/lock.png") }}>
+                        @endif
                     </div>
                     <div>
                         <h6 class="mb-1 d-inline-block text-truncate" style="max-width: 130px;">{{ $x->title }}</h6>

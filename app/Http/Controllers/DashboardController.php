@@ -180,4 +180,21 @@ class DashboardController extends Controller
         $program = Job::find($program_id);
         return redirect()->away($program->link);
     }
+
+    public function userPaid()
+    {
+        $user = User::find(auth()->user()->id);
+        $user->update([
+            'is_paid' => 1
+        ]);
+        $user->save();
+        // send a payment receipt mail todo
+
+        redirect()->route('dashboard');
+    }
+
+    public function userNotPaid()
+    {
+        redirect()->route('dashboard');
+    }
 }

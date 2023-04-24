@@ -15,10 +15,12 @@ Route::middleware('auth')->controller(DashboardController::class)->group(functio
     Route::post('search', 'search')->name('user.search.scholarship');
     // jobs middleware
     // these two is_paid middleware
-    Route::get('scholarships/{program_id}', 'scholarship')->name('user.scholarship');
-    Route::get('apply-scholarship/{program_id}', 'applyProgram')->name('user.apply');
-    Route::get('jobs/{job_id}', 'scholarship')->name('user.job');
-    Route::get('apply-job/{job_id}', 'applyProgram')->name('user.apply.job');
+    Route::middleware(['is_paid'])->group(function() {
+        Route::get('scholarships/{program_id}', 'scholarship')->name('user.scholarship');
+        Route::get('apply-scholarship/{program_id}', 'applyProgram')->name('user.apply');
+        Route::get('jobs/{job_id}', 'scholarship')->name('user.job');
+        Route::get('apply-job/{job_id}', 'applyProgram')->name('user.apply.job');
+    });
     // ========================
     Route::get('ban-scholarship/{program_id}', 'banProgram')->name('user.ban');
     Route::get('save-scholarship/{program_id}', 'saveProgram')->name('user.save');
@@ -26,11 +28,11 @@ Route::middleware('auth')->controller(DashboardController::class)->group(functio
     Route::get('unban-scholarship/{program_id}', 'unbanProgram')->name('user.unban');
 
     // PAYMENTS
-    Route::get('payment', function () { return view('user.dashboard.payment.plans'); })->name('payment');
+    Route::get('payment', function () { return view('user.dashboard.payment.plans'); })->name('payment.plans');
 
 });
 Route::post('/pay-with-flutterwave', 'PaymentController@payWithFlutterwave')->name('flutterwave.pay');
-Route::get('/flutterwave/callback', 'PaymentController@handleFlutterwaveCallback')->name('flutterwave.callback');
+Route::get('verify/{txref}/pay/momo', 'PaymentController@handleFlutterwaveCallback')->name('flutterwave.callback');
 
 
 Route::middleware(['auth', 'is_job'])->controller(DashboardController::class)->prefix('jobs')->group(function() {
