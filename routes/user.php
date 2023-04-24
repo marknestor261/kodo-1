@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\PaymentController;
-
 
 Route::middleware('auth')->controller(DashboardController::class)->group(function() {
     Route::get('dashboard', 'index')->name('dashboard');
@@ -13,7 +11,6 @@ Route::middleware('auth')->controller(DashboardController::class)->group(functio
     Route::get('matched', 'matched')->name('matched');
     Route::get('profile', 'profile')->name('user.profile');
     Route::post('search', 'search')->name('user.search.scholarship');
-    // jobs middleware
     // these two is_paid middleware
     Route::middleware(['is_paid'])->group(function() {
         Route::get('scholarships/{program_id}', 'scholarship')->name('user.scholarship');
@@ -47,4 +44,8 @@ Route::middleware(['auth', 'is_job'])->controller(DashboardController::class)->p
     Route::get('save-job/{program_id}', 'saveJob')->name('user.save.job');
     Route::get('unsave-job/{program_id}', 'unsaveJob')->name('user.unsave.job');
     Route::get('unban-job/{program_id}', 'unbanJob')->name('user.unban.job');
+});
+    Route::get('payment', function () { return view('dashboard.user.user_payment'); })->name('payment');
+    Route::post('/pay-with-flutterwave', 'PaymentController@payWithFlutterwave')->name('flutterwave.pay');
+
 });

@@ -6,6 +6,8 @@ use App\Models\HomePage;
 use App\Models\ScholarshipPage;
 use App\Models\AboutPage;
 use App\Models\TestimonialsPage;
+use App\Models\ContactPage;
+use App\Models\BlogPage;
 
 class FrontEndPagesController extends Controller
 {
@@ -31,6 +33,26 @@ class FrontEndPagesController extends Controller
     {
         $testimonialsPageContent = TestimonialsPage::first();
         return view('home.frontend.testimonials', compact('testimonialsPageContent'));
+    }
+    public function faqPage()
+    {
+        $frontPageContent = homePage::first();
+        return view('home.frontend.faq', compact('frontPageContent'));
+    }
+    public function testimonialPage()
+    {
+        $testimonialsPageContent = TestimonialsPage::first();
+        return view('home.frontend.testimonial', compact('testimonialsPageContent'));
+    }
+    public function contactPage()
+    {
+        $contactPageContent = ContactPage::first();
+        return view('home.frontend.contact', compact('contactPageContent'));
+    }
+    public function blogPage()
+    {
+        $blogPageContent = BlogPage::first();
+        return view('home.frontend.blog', compact('blogPageContent'));
     }
 
     
