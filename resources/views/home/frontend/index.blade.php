@@ -46,7 +46,7 @@
                             <h5 style="color: #fff;width: 60%;" data-swiper-animation="fadeInUp" data-delay=".4s" class="d-md-block d-none">{{ $homePageContent->section1_main_text2 }}</h5>
                             <!-- <h3><p style="color: #d2d4d7;" data-swiper-animation="fadeInUp" data-delay=".6s">KODO Scholarships is the #1 college scholarship app in the world and has helped students win more than $1 million dollars.</p></h3> -->
                             <div class="slider-btn mt-30" style="border-radius: 50%;margin-bottom: 50px;">
-                              <a style="border-radius: 100px;height:50px;width: 230px;font-weight: bold;color: #fff;padding-bottom: 10px;padding-top: 15px;" href="{{ url('scholarships') }}" class="btn ss-btn" data-swiper-animation="fadeInLeft" data-delay=".4s">Find Scholarships Now <i class="fal fa-long-arrow-right"></i></a>
+                              <a style="border-radius: 100px;height:50px;width: 230px;font-weight: bold;color: #fff;padding-bottom: 10px;padding-top: 15px;" href="{{ url('search-programs') }}" class="btn ss-btn" data-swiper-animation="fadeInLeft" data-delay=".4s">Find Scholarships Now <i class="fal fa-long-arrow-right"></i></a>
                             </div>
                           </div>
                         </div>
@@ -104,9 +104,9 @@
                                 <img src="{{ asset('img/icon/sve-icon4.png') }}" alt="icon01">
                                 </div>
                                 <div class="text">
-                                    <h5><a href="about.html">{{ $homePageContent->section4_main_text1 }}</a></h5>
+                                    <h5><a href="{{ url('about') }}">{{ $homePageContent->section4_main_text1 }}</a></h5>
                                     <p>{{ $homePageContent->section4_subtext1 }}</p>
-                                    <a href="courses.html">Read More <i class="fal fa-long-arrow-right"></i></a>
+                                    <a href="{{ url('blog') }}">Read More <i class="fal fa-long-arrow-right"></i></a>
                                 </div>
                              </div>
                                 
@@ -120,9 +120,9 @@
                                 <img src="{{ asset('img/icon/sve-icon5.png') }}" alt="icon01">
                                 </div>
                                 <div class="text">
-                                    <h5><a href="about.html">{{ $homePageContent->section4_main_text2 }}</a></h5>
+                                    <h5><a href="{{ url('about') }}">{{ $homePageContent->section4_main_text2 }}</a></h5>
                                     <p>{{ $homePageContent->section4_subtext2 }}</p>
-                                    <a href="courses.html">Read More <i class="fal fa-long-arrow-right"></i></a>
+                                    <a href="{{ url('blog') }}">Read More <i class="fal fa-long-arrow-right"></i></a>
                                 </div>
                              </div>
                                
@@ -136,9 +136,9 @@
                                 <img src="{{ asset('img/icon/sve-icon6.png') }}" alt="icon01">
                                 </div>
                                 <div class="text">
-                                    <h5><a href="about.html">{{ $homePageContent->section4_main_text3 }}</a></h5>
+                                    <h5><a href="{{ url('about') }}">{{ $homePageContent->section4_main_text3 }}</a></h5>
                                     <p>{{ $homePageContent->section4_subtext3 }}</p>
-                                    <a href="courses.html">Read More <i class="fal fa-long-arrow-right"></i></a>
+                                    <a href="{{ url('blog') }}">Read More <i class="fal fa-long-arrow-right"></i></a>
                                 </div>
                              </div>
                                 
@@ -186,7 +186,7 @@
                                     </div>
                                 </div>
                                  <div class="slider-btn mt-20">                                          
-                                     <a href="{{ url('scholarships') }}" class="btn ss-btn smoth-scroll">{{ $homePageContent->section1_button1_label }}<i class="fal fa-long-arrow-right"></i></a>				
+                                     <a href="{{ url('search-programs') }}" class="btn ss-btn smoth-scroll">{{ $homePageContent->section1_button1_label }}<i class="fal fa-long-arrow-right"></i></a>				
                                 </div>
                             </div>
                         </div>
@@ -326,7 +326,7 @@
                        <div class="col-lg-4 col-md-6">
                             <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                                 <div class="blog-thumb2">
-                                    <a href="courses.html"><img src="img/AIG-Scholarships.jpg" alt="img"></a>
+                                    <a href="{{ url('blog') }}"><img src="img/AIG-Scholarships.jpg" alt="img"></a>
                                      <div class="date-home">
                                         <i class="fal fa-calendar-alt"></i> 24th March 2023
                                     </div>
@@ -340,16 +340,16 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <h4><a href="courses.html">South African student gets familiar with biomedical-engineering.</a></h4> 
+                                    <h4><a href="{{ url('blog') }}">South African student gets familiar with biomedical-engineering.</a></h4> 
                                     <p>Curabitur sagittis libero tincidunt tempor finibus. Mauris at dignissim ligula, nec tristique orci.</p>
-                                    <div class="blog-btn"><a href="courses.html">Read More <i class="fal fa-long-arrow-right"></i></a></div>
+                                    <div class="blog-btn"><a href="{{ url('blog') }}">Read More <i class="fal fa-long-arrow-right"></i></a></div>
                                 </div>
                             </div>
                         </div>
                          <div class="col-lg-4 col-md-6">
                             <div class="single-post2 mb-30 hover-zoomin wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                                 <div class="blog-thumb2">
-                                    <a href="courses.html"><img src="{{ asset('img/istockphoto-818087910-612x612.jpg') }}" alt="img"></a>
+                                    <a href="{{ url('blog') }}"><img src="{{ asset('img/istockphoto-818087910-612x612.jpg') }}" alt="img"></a>
                                      <div class="date-home">
                                         <i class="fal fa-calendar-alt"></i> 24th March 2023
                                     </div>
@@ -364,16 +364,16 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <h4><a href="courses.html">Kodo has reached 10k.</a></h4> 
+                                    <h4><a href="{{ url('blog') }}">Kodo has reached 10k.</a></h4> 
                                     <p>Curabitur sagittis libero tincidunt tempor finibus. Mauris at dignissim ligula, nec tristique orci.</p>
-                                    <div class="blog-btn"><a href="courses.html">Read More <i class="fal fa-long-arrow-right"></i></a></div>
+                                    <div class="blog-btn"><a href="{{ url('blog') }}">Read More <i class="fal fa-long-arrow-right"></i></a></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="single-post2 mb-30 hover-zoomin wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                                 <div class="blog-thumb2">
-                                    <a href="courses.html"><img src="{{ asset('img/OCC_Default_Banner_OCC.jpg') }}" alt="img"></a>
+                                    <a href="{{ url('blog') }}"><img src="{{ asset('img/OCC_Default_Banner_OCC.jpg') }}" alt="img"></a>
                                      <div class="date-home">
                                         <i class="fal fa-calendar-alt"></i> 24th March 2023
                                     </div>
@@ -388,9 +388,9 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <h4><a href="courses.html">Graduation ceremoney held at University of.</a></h4> 
+                                    <h4><a href="{{ url('blog') }}">Graduation ceremoney held at University of.</a></h4> 
                                     <p>Curabitur sagittis libero tincidunt tempor finibus. Mauris at dignissim ligula, nec tristique orci.</p>
-                                    <div class="blog-btn"><a href="courses.html">Read More <i class="fal fa-long-arrow-right"></i></a></div>
+                                    <div class="blog-btn"><a href="{{ url('blog') }}">Read More <i class="fal fa-long-arrow-right"></i></a></div>
                                 </div>
                             </div>
                         </div>
