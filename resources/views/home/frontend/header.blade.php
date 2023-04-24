@@ -41,7 +41,7 @@
                         <ul>
                           <li>
                             <div class="second-header-btn">
-                              <a href="{{ route('login') }}" class="btn" style=" border: 1px solid #fff; background-color: #fff; color: #000;z-index: 999;">Login</a>
+                              <a href="#" class="btn" style=" border: 1px solid #fff; background-color: #fff; color: #000;z-index: 999;">Login</a>
                             </div>
                           </li>
                           <li>
