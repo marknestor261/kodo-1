@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Plan;
 use Flutterwave\Flutterwave;
+use Flutterwave\Payload;
+use Flutterwave\Service\PaymentPlan;
 
 class PlanController extends Controller
 {
@@ -37,6 +39,14 @@ class PlanController extends Controller
             'duration' => $request->interval === 'monthly' ? 1 : 12
         ];
 
+        $payload = new Payload();
+        $payload->set("amount", $request->amount);
+        $payload->set("name", $request->name);
+        $payload->set("interval", $request->interval);
+        $payload->set("duration", $request->interval === 'monthly' ? '1' : "12");
+
+        $service = new PaymentPlan();
+        $request = $service->create($payload);
         $plan = $flutterwave->createPlan($data);
 
         Plan::create([

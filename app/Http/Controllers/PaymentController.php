@@ -4,40 +4,61 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Flutterwave\Transaction;
+use Flutterwave\Util\Currency;
 
 
 class PaymentController extends Controller
 {
-    public function payWithFlutterwave(Request $request)
+    public function payWithMomo(Request $request)
     {
-        $flutterwave = new Transaction($public_key, $secret_key, $env);
-    
-        $payment = $flutterwave->initialize([
-            'amount' => $request->input('amount'),
-            'email' => $request->input('email'),
-            'tx_ref' => 'TXREF_'.uniqid(),
-            'redirect_url' => route('flutterwave.callback'),
-            'payment_options' => 'card',
-            'meta' => [
-                'user_id' => auth()->user()->id,
-            ],
-            'currency' => 'NGN',
+        $rules = [
+            'phone' => 'required|min:8',
+            'amount' => 'required',
+            'is_mtn' => 'required'
+        ];
+        
+        $messages = [
+            'phone.required' => 'The phone field is required.',
+            'phone.min' => 'The phone must be at least 8 characters.',
+            'amount.required' => 'The amount field is required.',
+            'is_mtn.required' => 'Choose a provider',
+        ];
+        $validated = $request->validate($rules, $messages);
+        $txref = uniqid().time();
+        $data = [
+            "amount" => $request->amount,
+            "currency" => Currency::UGX,
+            "tx_ref" => $txref,
+            "redirectUrl" =>  "http://{$_SERVER['HTTP_HOST']}/verify/$txref/pay/momo",
+            "additionalData" => [
+                "network" => $request->is_mtn? "MTN": "AIRTEL",
+            ]
+        ];
+        
+        $momopayment = \Flutterwave\Flutterwave::create("momo");
+        $customerObj = $momopayment->customer->create([
+            "full_name" => auth()->user()->name,
+            "email" => auth()->user()->email,
+            "phone" => $request->phone
         ]);
-    
-        return redirect($payment['data']['authorization_url']);
+        $data['customer'] = $customerObj;
+        $payload  = $momopayment->payload->create($data);
+        $result = $momopayment->initiate($payload);
     }
 
 
-    public function handleFlutterwaveCallback(Request $request)
+    public function handleFlutterwaveCallback($txref)
     {
-        $flutterwave = new Transaction($public_key, $secret_key, $env);
+        $transactionService = (new \Flutterwave\Service\Transactions());
 
-        $payment = $flutterwave->verify($_GET['tx_ref']);
+        $res = $transactionService->verifyWithTxref($txref);
 
-        if ($payment['status'] == 'success') {
+        if ($res->status === 'success') {
             // Payment was successful, update your database and return a success message
+            redirect()->action('DashboardController@userPaid');
         } else {
             // Payment failed, return an error message
+            redirect()->action('DashboardController@userNotPaid');
         }
     }
 
