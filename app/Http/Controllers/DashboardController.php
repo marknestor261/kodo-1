@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Scholarship;
 use App\Models\User;
 use App\Models\UserMetaData;
-use App\Models\Job;
 use Carbon\Carbon;
 use App\Http\Helpers\DashboardHelper;
 
