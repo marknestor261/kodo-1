@@ -14,8 +14,8 @@ class TagSeeder extends Seeder
      */
     public function run()
     {
-        Tag::create([
-            'name' => ''
-        ]);
+        // Tag::create([
+        //     'name' => ''
+        // ]);
     }
 }

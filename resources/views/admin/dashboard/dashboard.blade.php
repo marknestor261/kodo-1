@@ -33,14 +33,14 @@
 									<div class="card-body">
 										<div class="row">
 											<div class="col">
-												<h3 class="mb-2 fw-semibold">1,12,324</h3>
+												<h3 class="mb-2 fw-semibold">{{ $visitors_count }}</h3>
 												<p class="text-muted fs-13 mb-0">Daily Visitors</p>
-												<p class="text-muted mb-0 mt-2 fs-12">
+												{{-- <p class="text-muted mb-0 mt-2 fs-12">
 													<span class="icn-box text-success fw-semibold fs-13 me-1">
 														<i class='fa fa-long-arrow-up'></i>
 														42%</span>
 													since last month
-												</p>
+												</p> --}}
 											</div>
 											<div class="col col-auto top-icn dash">
 												<div class="counter-icon bg-primary dash ms-auto box-shadow-primary">
@@ -60,14 +60,14 @@
 									<div class="card-body">
 										<div class="row">
 											<div class="col">
-												<h3 class="mb-2 fw-semibold">12,563</h3>
-												<p class="text-muted fs-13 mb-0">Total Orders</p>
-												<p class="text-muted mb-0 mt-2 fs-12">
+												<h3 class="mb-2 fw-semibold">{{ $transactions_count }}</h3>
+												<p class="text-muted fs-13 mb-0">All Transactions</p>
+												{{-- <p class="text-muted mb-0 mt-2 fs-12">
 													<span class="icn-box text-danger fw-semibold fs-13 me-1">
 														<i class='fa fa-long-arrow-down'></i>
 														12%</span>
 													since last month
-												</p>
+												</p> --}}
 											</div>
 											<div class="col col-auto top-icn dash">
 												<div
@@ -88,14 +88,14 @@
 									<div class="card-body">
 										<div class="row">
 											<div class="col">
-												<h3 class="mb-2 fw-semibold">$5,178</h3>
-												<p class="text-muted fs-13 mb-0">Conversion Rate</p>
-												<p class="text-muted mb-0 mt-2 fs-12">
+												<h3 class="mb-2 fw-semibold">{{ $subscriptions_count }}</h3>
+												<p class="text-muted fs-13 mb-0">Subscriptions</p>
+												{{-- <p class="text-muted mb-0 mt-2 fs-12">
 													<span class="icn-box text-success fw-semibold fs-13 me-1">
 														<i class='fa fa-long-arrow-up'></i>
 														27%</span>
 													since last month
-												</p>
+												</p> --}}
 											</div>
 											<div class="col col-auto top-icn dash">
 												<div class="counter-icon bg-info dash ms-auto box-shadow-info">
@@ -115,14 +115,14 @@
 									<div class="card-body">
 										<div class="row">
 											<div class="col">
-												<h3 class="mb-2 fw-semibold">$43,987</h3>
-												<p class="text-muted fs-13 mb-0">Avg Orders</p>
-												<p class="text-muted mb-0 mt-2 fs-12">
+												<h3 class="mb-2 fw-semibold">{{ $user_count }}</h3>
+												<p class="text-muted fs-13 mb-0">Total Users</p>
+												{{-- <p class="text-muted mb-0 mt-2 fs-12">
 													<span class="icn-box text-success fw-semibold fs-13 me-1">
 														<i class='fa fa-long-arrow-up'></i>
 														9%</span>
 													since last month
-												</p>
+												</p> --}}
 											</div>
 											<div class="col col-auto top-icn dash">
 												<div class="counter-icon bg-warning dash ms-auto box-shadow-warning">
@@ -148,7 +148,7 @@
 										<div class="card">
 											<div class="card-body pb-2">
 												<div class="title-head mb-3">
-													<h3 class="mb-5 card-title">Revenue By channel</h3>
+													<h3 class="mb-5 card-title">Numbers By channel</h3>
 													<div class="storage-percent">
 														<div class="progress fileprogress h-auto ps-0 shadow1">
 															<span class="progress-bar progress-bar-xs wd-15p received"
@@ -167,7 +167,7 @@
 														<div class="remaining-storage">
 															<div class="text-muted fs-13 mb-1 mt-3">Total Revenue Earned
 															</div>
-															<div class="fw-semibold fs-14 mb-1 mt-3">$345,3467.72</div>
+															<div class="fw-semibold fs-14 mb-1 mt-3">Ugx {{ $revenue_earned }}</div>
 														</div>
 													</div>
 												</div>
@@ -175,36 +175,39 @@
 													<ul class="task-list1 row mx-auto">
 														<li class="col-xl-6">
 															<span class="mb-0 fs-13 me-1"><i
-																	class="task-icon1 bg-primary me-3"></i>Direct</span>
+																	class="task-icon1 bg-primary me-3"></i>Job Income</span>
+																	<br>
 															<span class="text-success fw-semibold fs-12">
-																<span class="mx-1"><i class="fa fa-caret-up"></i></span>
-																<span class="">(42.34%)</span>
+																{{-- <span class="mx-1"><i class="fa fa-caret-up"></i></span> --}}
+																<span class="">Ugx {{ $job_income }}</span>
 															</span>
 														</li>
 														<li class="col-xl-6">
 															<span class="mb-0 fs-13 me-1"><i
-																	class="task-icon1 bg-secondary"></i>Referral</span>
+																	class="task-icon1 bg-secondary"></i>Scholarships</span>
+																	<br>
 															<span class="text-danger fw-semibold fs-12">
-																<span class="mx-1"><i
-																		class="fa fa-caret-down"></i></span>
-																<span class="">(13%)</span>
+																{{-- <span class="mx-1"><i
+																		class="fa fa-caret-down"></i></span> --}}
+																<span class="">Ugx {{ $scholarships_income }}</span>
 															</span>
 														</li>
 														<li class="col-xl-6">
 															<span class="mb-0 fs-13 me-1"><i
-																	class="task-icon1 bg-custom-yellow"></i>Social</span>
+																	class="task-icon1 bg-custom-yellow"></i>Job Users</span>
+																	<br>
 															<span class="text-success fw-semibold fs-12">
-																<span class="mx-1"><i class="fa fa-caret-up"></i></span>
-																<span class="">(62%)</span>
+																{{-- <span class="mx-1"><i class="fa fa-caret-up"></i></span> --}}
+																<span class="">{{ $job_users }}</span>
 															</span>
 														</li>
 														<li class="col-xl-6 mb-xl-0">
 															<span class="mb-0 fs-13 me-1"><i
-																	class="task-icon1 bg-teritary"></i>Organic
-																Search</span>
+																	class="task-icon1 bg-teritary"></i>Scholarships</span>
+																	<br>
 															<span class="text-success fw-semibold fs-12">
-																<span class="mx-1"><i class="fa fa-caret-up"></i></span>
-																<span class="">(22.46%)</span>
+																{{-- <span class="mx-1"><i class="fa fa-caret-up"></i></span> --}}
+																<span class="">{{ $scholarships_users }}</span>
 															</span>
 														</li>
 													</ul>
@@ -216,10 +219,12 @@
 										<div class="card overflow-hidden">
 											<div class="card-header border-bottom">
 												<h4 class="card-title fw-semibold">Latest Transactions</h4>
-												<a href="#" class="ms-auto">View All</a>
+												<a href={{ route('admin.success.transactions') }} class="ms-auto">View All</a>
 											</div>
 											<div class="card-body p-0 customers mt-1">
 												<div class="list-group py-1">
+													@foreach ($latest_transactions as $x)
+														
 													<a href="javascript:void(0);" class="border-0">
 														<div class="list-group-item border-0">
 															<div class="media mt-0 align-items-center">
@@ -230,90 +235,27 @@
 																	<div class="d-flex align-items-center">
 																		<div class="mt-0">
 																			<h5 class="mb-1 fs-13 fw-normal text-dark">
-																				To Bel Bcron Bank<span
-																					class="fs-13 fw-semibold ms-1">Savings
-																					Section</span></h5>
-																			<p class="mb-0 fs-12 text-muted">Transfer
-																				4.53pm</p>
+																				{{ $x->user_email }} </h5>
+																			{{-- <p class="mb-0 fs-12 text-muted">Transfer
+																				4.53pm</p> --}}
 																		</div>
 																		<span class="ms-auto fs-13">
 																			<span
-																				class="float-end text-dark">-$2,543</span>
+																				class="float-end text-dark">
+																			@if($x->success)
+																				+ {{ $x->amount }}
+																			@else
+																				- {{ $x->amount }}
+																			@endif
+																			</span>
 																		</span>
 																	</div>
 																</div>
 															</div>
 														</div>
 													</a>
-													<a href="javascript:void(0);" class="border-0">
-														<div class="list-group-item border-0">
-															<div class="media mt-0 align-items-center">
-																<div class="transaction-icon">
-																	<i class="fe fe-briefcase"></i>
-																</div>
-																<div class="media-body">
-																	<div class="d-flex align-items-center">
-																		<div class="mt-0">
-																			<h5 class="mb-1 fs-13 fw-normal text-dark">
-																				Payment For <span
-																					class="fs-13 fw-semibold ms-1">Day
-																					Job</span></h5>
-																			<p class="mb-0 fs-12 text-muted">Received
-																				2.45pm</p>
-																		</div>
-																		<span class="ms-auto fs-13">
-																			<span
-																				class="float-end text-dark">+$32,543</span>
-																		</span>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</a>
-													<a href="javascript:void(0);" class="border-0">
-														<div class="list-group-item border-0">
-															<div class="media mt-0 align-items-center">
-																<div class="transaction-icon"><i
-																		class="fe fe-dollar-sign"></i>
-																</div>
-																<div class="media-body">
-																	<div class="d-flex align-items-center">
-																		<div class="mt-0">
-																			<h5 class="mb-1 fs-13 fw-normal text-dark">
-																				Bought items from<span
-																					class="fs-13 fw-semibold ms-1">Ecommerce
-																					site</span></h5>
-																			<p class="mb-0 fs-12 text-muted">Payment
-																				8.00am</p>
-																		</div>
-																		<span class="ms-auto fs-13">
-																			<span
-																				class="float-end text-dark">-$256</span>
-																		</span>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</a>
-													<!-- <a href="javascript:void(0);" class="border-0">
-														<div class="list-group-item border-0">
-															<div class="media mt-0 align-items-center">
-																<div class="transaction-icon"><i class="fe fe-file-text"></i>
-																</div>
-																<div class="media-body">
-																	<div class="d-flex align-items-center">
-																		<div class="mt-0">
-																			<h5 class="mb-1 fs-13 fw-normal text-dark">Paid Monthly Expenses<span class="fs-13 fw-semibold ms-1">Bills & Loans</span></h5>
-																			<p class="mb-0 fs-12 text-muted">Payment 6.43am</p>
-																		</div>
-																		<span class="ms-auto fs-13">
-																			<span class="float-end text-dark">-$1,298</span>
-																		</span>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</a> -->
+													@endforeach
+													
 												</div>
 											</div>
 										</div>
@@ -324,8 +266,8 @@
 							<div class="col-sm-12 col-md-12 col-lg-6 col-xl-8">
 								<div class="card">
 									<div class="card-header border-bottom">
-										<h3 class="card-title">Sales</h3>
-										<div class="ms-auto">
+										<h3 class="card-title">Revenue</h3>
+										{{-- <div class="ms-auto">
 											<div class="btn-group p-0 ms-auto">
 												<button class="btn btn-primary-light btn-sm disabled"
 													type="button">2021</button>
@@ -333,18 +275,18 @@
 												<button class="btn btn-primary-light btn-sm disabled"
 													type="button">2023</button>
 											</div>
-										</div>
+										</div> --}}
 									</div>
 									<div class="card-body">
 										<div class="sales-stats d-flex">
 											<div>
-												<div class="text-muted fs-13">Total Sales
-													<span class="p-2 br-5 text-success"><i
-															class="fe fe-arrow-up-right"></i></span>
+												<div class="text-muted fs-13">Total Revenue
+													{{-- <span class="p-2 br-5 text-success"><i
+															class="fe fe-arrow-up-right"></i></span> --}}
 												</div>
-												<h3 class="fw-semibold">$582,857.97</h3>
-												<div><span class="text-success fs-13 me-1">32%</span>Increase Since last
-													Year</div>
+												<h3 class="fw-semibold">Ugx {{ $revenue_earned }}</h3>
+												{{-- <div><span class="text-success fs-13 me-1">32%</span>Increase Since last
+													Year</div> --}}
 											</div>
 										</div>
 										<div id="chartD"></div>
@@ -359,7 +301,7 @@
 							<div class="col-lg-6 col-md-12">
 								<div class="card">
 									<div class="card-header border-bottom">
-										<h3 class="card-title">Line chart</h3>
+										<h3 class="card-title">Users</h3>
 									</div>
 									<div class="card-body">
 										<div id="echart1" class="chartsh"></div>
@@ -369,7 +311,7 @@
 							<div class="col-lg-6 col-md-12">
 								<div class="card">
 									<div class="card-header border-bottom">
-										<h3 class="card-title">Combination of Line & Bar Chart</h3>
+										<h3 class="card-title">Income</h3>
 									</div>
 									<div class="card-body">
 										<div id="echart2" class="chartsh"></div>
