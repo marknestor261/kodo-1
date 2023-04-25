@@ -5,6 +5,9 @@ use App\Http\Controllers\AdminController;
 
 
 Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function() {
+    Route::get('users', function () { return view('admin.dashboard.users'); })->name('admin.users');
+    Route::get('transactions/success', function () { return view('admin.dashboard.successtransactions'); })->name('admin.success.transactions');
+    Route::get('transactions/failed', function () { return view('admin.dashboard.failedtransactions'); })->name('admin.failed.transactions');
     Route::controller(AdminController::class)->group(function() {
         // dashboard
         Route::get('dashboard', 'dashboard')->name('admin.dashboard');
