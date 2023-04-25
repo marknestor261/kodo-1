@@ -13,6 +13,10 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+<<<<<<< HEAD
 .DS_Store
 .zip
 Archive.zip
+=======
+.DS_Store
+>>>>>>> f99552b6586ce83ba58e2a6723c017aa39c8d27e
