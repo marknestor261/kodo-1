@@ -249,5 +249,19 @@ class AdminController extends Controller
         session(['success' => 'Job updated successfully']);
         return redirect()->back();
     }
+
+
+    // Users
+    public function allUsers()
+    {
+        $users = User::get();
+        foreach ($users as $key => $value) {
+            $meta = UserMetaData::where('user_id',$value->id)->first();
+            $value->name = $meta->first_name. ' '. $meta->last_name;
+            $value->created_at = Carbon::parse($value->created_at)->format('d-m-Y');
+        }
+        return view('admin.dashboard.users', compact('users'));
+    }
+
     
 }
