@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Scholarship;
 use App\Models\User;
+use App\Models\Subscription;
 use App\Models\Transaction;
 use App\Models\UserMetaData;
 use App\Models\Job;
@@ -112,7 +113,21 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        return view('admin.dashboard.dashboard');
+        $user_count = User::count();
+        $transactions_count = Transaction::count();
+        $subscriptions_count = Subscription::count();
+        $visitors_count = AdminHelper::visitorsCount();
+        $revenue_earned = AdminHelper::revenueEarned();
+        $job_income = AdminHelper::jobIncome();
+        $scholarships_income = AdminHelper::scholarshipsIncome();
+        $job_users = AdminHelper::jobUsers();
+        $scholarships_users = AdminHelper::scholarshipsUsers();
+        $latest_transactions = AdminHelper::latestTransactions();
+        return view('admin.dashboard.dashboard', 
+        compact(['user_count', 'transactions_count',
+        'revenue_earned', 'job_income', 'scholarships_income', 
+        'job_users', 'scholarships_users', 'latest_transactions',
+        'subscriptions_count', 'visitors_count']));
     }
 
      public function aboutEdit()
