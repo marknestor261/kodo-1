@@ -26,7 +26,7 @@
                                 <!-- Add the new list item here -->
                                 <div id="mobile-menu-buttons">
                                     <li><a href="#" class="mobile-btn" style="background-color: #ffffff; color: #000; border: 2px solid #000; height: auto;  width: 85px; text-align: center;padding: 5px 5px 5px 5px; margin-bottom: 1px; margin-left: 8px; margin-top:20px; border-radius: 80px;">Login</a></li>
-                                    <li><a href="{{ url('scholarships') }}" class="mobile-btn" style="background-color: #ec1d64; height: auto; color: #ffffff; width: 250px; padding: 10px 20px; margin-bottom: 10px;margin-top: 30px; margin-left: 8px; border-radius: 80px;text-align: center;">Find scholarships</a></li>
+                                    <li><a href="https://kodoscholarships.com/search-programs" class="mobile-btn" style="background-color: #ec1d64; height: auto; color: #ffffff; width: 250px; padding: 10px 20px; margin-bottom: 10px;margin-top: 30px; margin-left: 8px; border-radius: 80px;text-align: center;">Find scholarships</a></li>
                                   </div>
                                   
                               </ul>
@@ -46,7 +46,7 @@
                           </li>
                           <li>
                             <div class="second-header-btn" style="width: 130px;">
-                              <a href="{{ url('scholarships') }}" class="btn">Find scholarships</a>
+                              <a href="https://kodoscholarships.com/search-programs" class="btn">Find scholarships</a>
                             </div>
                           </li>
                         </ul>

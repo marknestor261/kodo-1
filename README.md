@@ -1,7 +1,7 @@
-# Neptune Laravel Admin Template
+# Kodo Scholarships
 
 
-Neptune Laravel Admin Template is an admin template based on Bootstrap 4 and Laravel. 
+Kodo Scholarships Website and Admin panel
 
 This is a completely responsive and mobile-first admin template that provides a great foundation for your Bootstrap + Laravel project.
 
