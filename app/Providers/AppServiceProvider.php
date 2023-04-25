@@ -45,5 +45,14 @@ class AppServiceProvider extends ServiceProvider
             $view->with('theme', $theme);
         });
 
+        view()->composer('admin.layouts.dashboard-index', function($view) {
+            $theme = \Cookie::get('theme');
+            if ($theme == 'darkmode') {
+                $theme = 'dark';
+            }
+
+            $view->with('theme', $theme);
+        });
+
     }
 }

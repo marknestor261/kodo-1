@@ -48,4 +48,4 @@ Route::middleware(['auth', 'is_job'])->controller(DashboardController::class)->p
     Route::get('payment', function () { return view('dashboard.user.user_payment'); })->name('payment');
     Route::post('/pay-with-flutterwave', 'PaymentController@payWithFlutterwave')->name('flutterwave.pay');
 
-});
+
