@@ -8,6 +8,9 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function() {
     Route::controller(AdminController::class)->group(function() {
         // dashboard
         Route::get('dashboard', 'dashboard')->name('admin.dashboard');
+        Route::get('users', 'allUsers')->name('admin.users');
+        Route::get('transactions/success', 'successfulTransactions')->name('admin.success.transactions');
+        Route::get('transactions/failed', 'failedTransactions')->name('admin.failed.transactions');    
         // scholarship routes
         Route::get('create-scholarship', 'createScholarship')->name('admin.create-scholarship');
         Route::post('create-scholarship', 'storeScholarship')->name('admin.create.scholarship');
