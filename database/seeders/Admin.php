@@ -37,10 +37,10 @@ class Admin extends Seeder
             'subject' => 'Computer Science'
         ]);
 
-        HomePage::create([]);
-        ScholarshipPage::create([]);
-        AboutPage::create([]);
-        TestimonialsPage::create([]);
+        // HomePage::create([]);
+        // ScholarshipPage::create([]);
+        // AboutPage::create([]);
+        // TestimonialsPage::create([]);
 
     }
 }

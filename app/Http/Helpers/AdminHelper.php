@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Scholarship;
 use App\Models\User;
 use App\Models\Job;
+use App\Models\Visitor;
+use App\Models\Transaction;
 use App\Models\StepTempUser;
 use App\Models\UserMetaData;
 use Carbon\Carbon;
@@ -118,6 +120,77 @@ class AdminHelper
         ]);
         $program->save();
         return $program;
+    }
+
+
+    // dashboard functions
+    public static function visitorsCount()
+    {
+        // Retrieve all visitors created in the past 24 hours
+        $count = Visitor::where(function($query) {
+            $query->whereDate('created_at', '>=', now()->subDay());
+        })->count();
+        return $count;
+    }
+
+    public static function latestTransactions()
+    {
+        $data = Transaction::latest()->take(4)->get();
+        foreach ($data as $key => $value) {
+            $meta = UserMetaData::where('user_id',$value->user_id)->first();
+            $user = User::find($value->user_id);
+            $value->user_name = $meta->first_name. ' '. $meta->last_name;
+            $value->user_email = $user->email;
+        }
+
+        return $data;
+    }
+
+    public static function revenueEarned()
+    {
+        $data = Transaction::where('success', 1)->get();
+        $result = 0;
+        foreach ($data as $key => $value) {
+           $result += intval($value->amount);
+        }
+
+        return $result;
+    }
+
+
+    public static function jobIncome()
+    {
+        $data = Transaction::where('is_job', 1)->where('success', 1)->get();
+        $result = 0;
+        foreach ($data as $key => $value) {
+           $result += intval($value->amount);
+        }
+
+        return $result;
+    }
+
+
+    public static function scholarshipsIncome()
+    {
+        $data = Transaction::where('is_job', 0)->where('success', 1)->get();
+        $result = 0;
+        foreach ($data as $key => $value) {
+           $result += intval($value->amount);
+        }
+
+        return $result;
+    }
+
+    public static function jobUsers()
+    {
+        $count = User::where('is_job', 1)->count();
+        return $count;
+    }
+
+    public static function scholarshipsUsers()
+    {
+        $count = User::where('is_job', 0)->count();
+        return $count;
     }
 
 }
