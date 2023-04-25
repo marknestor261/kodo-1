@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Scholarship;
 use App\Models\User;
+use App\Models\Transaction;
 use App\Models\UserMetaData;
 use App\Models\Job;
 use Carbon\Carbon;
@@ -262,6 +263,35 @@ class AdminController extends Controller
         }
         return view('admin.dashboard.users', compact('users'));
     }
+
+    public function successfulTransactions()
+    {
+        $data = Transaction::where('success', 1)->get();
+        foreach ($data as $key => $value) {
+            $meta = UserMetaData::where('user_id',$value->user_id)->first();
+            $user = User::find($value->user_id);
+            $value->user_name = $meta->first_name. ' '. $meta->last_name;
+            $value->user_email = $user->email;
+            $value->created_at = Carbon::parse($value->created_at)->format('d-m-Y');
+            $value->end_at = Carbon::parse($value->end_at)->format('d-m-Y');
+        }
+        return view('admin.dashboard.successtransactions', compact('data'));
+    }
+
+    public function failedTransactions()
+    {
+        $data = Transaction::where('success', 0)->get();
+        foreach ($data as $key => $value) {
+            $meta = UserMetaData::where('user_id',$value->user_id)->first();
+            $user = User::find($value->user_id);
+            $value->user_name = $meta->first_name. ' '. $meta->last_name;
+            $value->user_email = $user->email;
+            $value->created_at = Carbon::parse($value->created_at)->format('d-m-Y');
+            $value->end_at = Carbon::parse($value->end_at)->format('d-m-Y');
+        }
+        return view('admin.dashboard.failedtransactions', compact('data'));
+    }
+
 
     
 }
