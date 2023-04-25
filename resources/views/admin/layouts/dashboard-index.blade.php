@@ -36,7 +36,6 @@
 
 	<!-- BACK-TO-TOP -->
 	<a href="#top" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
-
    
 	<!-- JQUERY JS -->
 	<script src={{ asset("assets/js/jquery.min.js") }}></script>
@@ -47,10 +46,6 @@
 
 	<!-- SIDE-MENU JS-->
 	<script src={{ asset("assets/plugins/sidemenu/sidemenu.js") }}></script>
-
-    <!-- ECHART JS -->
-	<script src={{ asset("assets/plugins/echarts/echarts.js") }}></script>
-	<script src={{ asset("assets/js/echarts.js") }}></script>
 
 	<!-- APEXCHART JS -->
 	<script src={{ asset("assets/js/apexcharts.js") }}></script>
@@ -72,16 +67,20 @@
 	<!-- REPLY JS-->
 	<script src={{ asset("assets/js/reply.js") }}></script>
 
+	
+	<!-- ECHART JS -->
+	<script src={{ asset("assets/plugins/echarts/echarts.js") }}></script>
+	<script src={{ asset("assets/js/echarts.js") }}></script>
 
 	<!-- PERFECT SCROLLBAR JS-->
 	<script src={{ asset("assets/plugins/p-scroll/perfect-scrollbar.js") }}></script>
 	<script src={{ asset("assets/plugins/p-scroll/pscroll.js") }}></script>
 
-    <!-- STICKY JS -->
-    <script src={{ asset("assets/js/sticky.js") }}></script>
+	<!-- STICKY JS -->
+	<script src={{ asset("assets/js/sticky.js") }}></script>
 
-    <!-- COLOR THEME JS -->
-    <script src={{ asset("assets/js/themeColors.js") }}></script>
+	<!-- COLOR THEME JS -->
+	<script src={{ asset("assets/js/themeColors.js") }}></script>
 
 	<!-- CUSTOM JS -->
 	<script src={{ asset("assets/js/custom.js") }}></script>
