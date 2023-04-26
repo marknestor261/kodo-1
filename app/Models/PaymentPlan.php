@@ -9,4 +9,9 @@ class PaymentPlan extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
 }

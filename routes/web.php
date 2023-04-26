@@ -19,6 +19,7 @@ require __DIR__.'/admin.php';
 require __DIR__.'/user.php';
 require __DIR__.'/frontend.php';
 require __DIR__.'/steps.php';
+require __DIR__.'/payment.php';
 
 
 // For Clear cache
