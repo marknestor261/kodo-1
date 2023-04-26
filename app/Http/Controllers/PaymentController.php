@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Flutterwave\Transaction;
 use Flutterwave\Util\Currency;
+use App\Flutterwave\FlutterwaveHelper;
+
 
 
 class PaymentController extends Controller
@@ -25,25 +27,9 @@ class PaymentController extends Controller
         ];
         $validated = $request->validate($rules, $messages);
         $txref = uniqid().time();
-        $data = [
-            "amount" => $request->amount,
-            "currency" => Currency::UGX,
-            "tx_ref" => $txref,
-            "redirectUrl" =>  "http://{$_SERVER['HTTP_HOST']}/verify/$txref/pay/momo",
-            "additionalData" => [
-                "network" => $request->is_mtn? "MTN": "AIRTEL",
-            ]
-        ];
-        
-        $momopayment = \Flutterwave\Flutterwave::create("momo");
-        $customerObj = $momopayment->customer->create([
-            "full_name" => auth()->user()->name,
-            "email" => auth()->user()->email,
-            "phone" => $request->phone
-        ]);
-        $data['customer'] = $customerObj;
-        $payload  = $momopayment->payload->create($data);
-        $result = $momopayment->initiate($payload);
+        $data = FlutterwaveHelper::initiateMobilePay($request->phone, $request->is_mtn, 
+                $request->amount, $txref, "http://{$_SERVER['HTTP_HOST']}/verify/{$txref}/payment");
+        return response()->json($paymentData);
     }
 
 
@@ -63,10 +49,35 @@ class PaymentController extends Controller
     }
 
     
-    public function payWithFlutterwave()
-    {
-        $flutterwave = new Transaction($public_key, $secret_key, $env);
-        // Replace $public_key, $secret_key, and $env with your own API keys and environment
+    public function payWithCard(Request $request)
+    { 
+        $rules = [
+            'amount' => 'required',
+        ];
+        $messages = [
+            'amount.required' => 'The amount field is required.'
+        ];
+        $validated = $request->validate($rules, $messages); 
+        $txref = uniqid().time();
+        $amount = $request->input('amount');
+        $paymentData = FlutterwaveHelper::initiatePayment($amount, $txref, "http://{$_SERVER['HTTP_HOST']}/verify/{$txref}/payment");
+        return response()->json($paymentData);
+            
     }
+
+    
 }
 
+// class PaymentController extends Controller
+// {
+//     public function initiatePayment(Request $request)
+//     {
+//         $amount = $request->input('amount');
+//         $email = $request->input('email');
+//         $callbackUrl = $request->input('callback_url');
+
+//         $paymentData = FlutterwaveHelper::initiatePayment($amount, $email, $callbackUrl);
+
+//         return response()->json($paymentData);
+//     }
+// }
