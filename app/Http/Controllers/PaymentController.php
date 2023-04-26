@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Flutterwave\Transaction;
 use Flutterwave\Util\Currency;
 use App\Flutterwave\FlutterwaveHelper;
+use App\Models\PaymentPlan;
 
 
 
@@ -63,6 +64,33 @@ class PaymentController extends Controller
         $paymentData = FlutterwaveHelper::initiatePayment($amount, $txref, "http://{$_SERVER['HTTP_HOST']}/verify/{$txref}/payment");
         return response()->json($paymentData);
             
+    }
+
+    public function paymentSuccess(PaymentPlan $plan)
+    {
+        $user = auth()->user();
+        $carbon = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $user->pay_deadline < now() ? now() : $user->pay_deadline );
+        // add the duration in days
+        $carbon->addDays($plan->duration);
+
+        $user->update([
+            'is_paid' => 1,
+            'pay_deadline' => $carbon
+        ]);
+        $user->save();
+    }
+
+    public static function cronJob()
+    {
+        $users = User::get();
+        foreach ($users as $key => $value) {
+            if($value->pay_deadline < now() && $value->is_paid) {
+                $value->update([
+                    'is_paid' => 0,
+                ]);
+                $value->save();
+            }
+        }
     }
 
     

@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->boolean('is_paid')->default(0);
             $table->string('password');
             $table->rememberToken();
+            $table->timestamp('pay_deadline')->default(now()->subDay());
             $table->timestamps();
         });
     }
