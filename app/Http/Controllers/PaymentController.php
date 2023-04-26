@@ -43,10 +43,10 @@ class PaymentController extends Controller
         if ($res->status === 'success') {
             // Payment was successful, update your database and return a success message
             $plan = PaymentPlan::find($plan_id);
-            PaymentController::paymentSuccess($plan);
+           return PaymentController::paymentSuccess($plan);
         } else {
             // Payment failed, return an error message
-            PaymentController::paymentFailure();
+           return PaymentController::paymentFailure();
         }
     }
 
@@ -79,7 +79,7 @@ class PaymentController extends Controller
             'pay_deadline' => $carbon
         ]);
         $user->save();
-        redirect()->route('dashboard');
+        return redirect()->route('dashboard');
     }
 
     public static function paymentFailure()
@@ -91,7 +91,7 @@ class PaymentController extends Controller
             ]);
             $user->save();
         }
-        redirect()->route('dashboard');
+       return redirect()->route('dashboard');
     }
 
     public static function cronJob()
