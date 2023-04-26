@@ -67,7 +67,7 @@
                     <div class="row">
                         <div class="col-lg-5 col-md-5  wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                            
-                            <div class="s-video-wrap2" style="background-image:url(img/video//faq.jpg)">
+                            <div class="s-video-wrap2" style="background-image:url(img/video//faq.jpg);background-position: center;background-size: cover;">
                                 <div class="s-video-content text-center">
                                    <h6><a href="https://www.youtube.com/watch?v=7e90gBu4pas" class="popup-video mb-50"><img src="img/bg/play-button.png" alt="circle_right"></a></h6> 
                                    
