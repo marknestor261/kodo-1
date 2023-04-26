@@ -7,91 +7,89 @@ use Flutterwave\Transaction;
 use Flutterwave\Util\Currency;
 use App\Flutterwave\FlutterwaveHelper;
 use App\Models\PaymentPlan;
-
-
+use App\Models\User;
+use Carbon\Carbon;
 
 class PaymentController extends Controller
 {
     public function payWithMomo(Request $request)
     {
-        $rules = [
+        $validated = $request->validate([
             'phone' => 'required|min:8',
             'amount' => 'required',
             'is_mtn' => 'required'
-        ];
-        
-        $messages = [
+        ], [
             'phone.required' => 'The phone field is required.',
             'phone.min' => 'The phone must be at least 8 characters.',
             'amount.required' => 'The amount field is required.',
             'is_mtn.required' => 'Choose a provider',
-        ];
-        $validated = $request->validate($rules, $messages);
+        ]);
+        
         $txref = uniqid().time();
+        $callbackUrl = "http://{$_SERVER['HTTP_HOST']}/verify/{$txref}/payment/{$request->plan_id}";
         $data = FlutterwaveHelper::initiateMobilePay($request->phone, $request->is_mtn, 
-                $request->amount, $txref, "http://{$_SERVER['HTTP_HOST']}/verify/{$txref}/payment/{$request->plan_id}");
-        return response()->json($paymentData);
+                $request->amount, $txref, $callbackUrl);
+        return response()->json($data);
     }
 
 
     public function handleFlutterwaveCallback($txref, $plan_id)
     {
-        $transactionService = (new \Flutterwave\Service\Transactions());
+        $transactionService = new \Flutterwave\Service\Transactions();
 
         $res = $transactionService->verifyWithTxref($txref);
 
         if ($res->status === 'success') {
             // Payment was successful, update your database and return a success message
             $plan = PaymentPlan::find($plan_id);
-           return PaymentController::paymentSuccess($plan);
+            return $this->paymentSuccess($plan);
         } else {
             // Payment failed, return an error message
-           return PaymentController::paymentFailure();
+            return $this->paymentFailure();
         }
     }
 
     
     public function payWithCard(Request $request)
     { 
-        $rules = [
+        $validated = $request->validate([
             'amount' => 'required',
-        ];
-        $messages = [
+        ], [
             'amount.required' => 'The amount field is required.'
-        ];
-        $validated = $request->validate($rules, $messages); 
+        ]); 
+
         $txref = uniqid().time();
         $amount = $request->input('amount');
-        $paymentData = FlutterwaveHelper::initiatePayment($amount, $txref, "http://{$_SERVER['HTTP_HOST']}/verify/{$txref}/payment/{$request->plan_id}");
+        $callbackUrl = "http://{$_SERVER['HTTP_HOST']}/verify/{$txref}/payment/{$request->plan_id}";
+        $paymentData = FlutterwaveHelper::initiatePayment($amount, $txref, $callbackUrl);
         return response()->json($paymentData);
-            
     }
 
-    public static function paymentSuccess(PaymentPlan $plan)
+    private function paymentSuccess(PaymentPlan $plan)
     {
         $user = auth()->user();
-        $carbon = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $user->pay_deadline->lt(now()) ? now() : $user->pay_deadline );
+        $carbon = Carbon::createFromFormat('Y-m-d H:i:s', $user->pay_deadline->lt(now()) ? now() : $user->pay_deadline );
         // add the duration in days
         $carbon->addDays($plan->duration);
 
         $user->update([
-            'is_paid' => 1,
+            'is_paid' => true,
             'pay_deadline' => $carbon
         ]);
-        $user->save();
+
         return redirect()->route('dashboard');
     }
 
-    public static function paymentFailure()
+    private function paymentFailure()
     {
         $user = auth()->user();
         if($user->pay_deadline->lt(now()) && $user->is_paid) {
             $user->update([
-                'is_paid' => 0,
+                'is_paid' => false,
             ]);
-            $user->save();
         }
-       return redirect()->route('dashboard');
+
+        return redirect()->route('dashboard');
     }
 
     public static function cronJob()
