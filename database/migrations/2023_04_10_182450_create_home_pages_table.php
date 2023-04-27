@@ -18,7 +18,7 @@ class CreateHomePagesTable extends Migration
             $table->id();
 
             $table->string('section1_main_text1')->default("WELCOME TO KODO");
-            $table->string('section1_main_text2')->default("Search for a Scholarship right now");
+            $table->string('section1_main_text2')->default("KODO Scholarships is the #1 college scholarship app in the world and has helped students win more than $1 million dollars.");
             $table->string('section1_subtext')->default("We take the hassle out of the scholarship search process and increase your chances of matching you with scholarships in minutes.");
             $table->string('section1_button1_label')->default("SEARCH PROGRAMS");
             $table->string('section1_image1')->default("link to image1");

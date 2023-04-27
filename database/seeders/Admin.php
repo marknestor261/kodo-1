@@ -37,7 +37,23 @@ class Admin extends Seeder
             'subject' => 'Computer Science'
         ]);
 
-        // HomePage::create([]);
+        
+     // Home page record with demo data
+         HomePage::create([
+        'section1_main_text1' => 'Find life changing scholarships made for you.', 
+        
+
+      
+    ]);
+        AboutPage::create([
+        'section1_main_text1' => 'Find life changing scholarships made for you.', 
+        
+
+      
+    ]);
+
+
+
         // ScholarshipPage::create([]);
         // AboutPage::create([]);
         // TestimonialsPage::create([]);

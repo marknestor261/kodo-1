@@ -63,8 +63,8 @@
                                     <div class="row">
                                     <div class="col-md-12">
                                      <ul class="green2">                                              
-                                                <li><div class="abcontent"><div class="ano"><span>01</span></div> <div class="text"><h3>{{ $aboutPageContent->section2_main_text3 }}</h3> <p>{{ $aboutPageContent->section2_subtext1 }}</p></div></div></li>
-                                                <li><div class="abcontent"><div class="ano"><span>02</span></div> <div class="text"><h3>{{ $aboutPageContent->section2_main_text4 }}</h3> <p>{{ $aboutPageContent->section2_subtext2 }}</p></div></div></li>
+                                                <li><div class="abcontent"> <div class="text"><h3>{{ $aboutPageContent->section2_main_text3 }}</h3> <p>{{ $aboutPageContent->section2_subtext1 }}</p></div></div></li>
+                                                <li><div class="abcontent"> <div class="text"><h3>{{ $aboutPageContent->section2_main_text4 }}</h3> <p>{{ $aboutPageContent->section2_subtext2 }}</p></div></div></li>
                                                 
                                            </ul>
                                     </div>

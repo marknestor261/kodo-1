@@ -14,18 +14,18 @@
                               <div class="row">
                                   <div class="col-lg-6 col-md-6 col-sm-6">
                                       <ul class="link-list" style="font-weight: bold;">
-                                          <li><a href="about.html">About Us</a></li>
-                                          <li><a href="faq.html">FAQ</a></li>
-                                          <li><a href="courses.html">Scholarships</a></li>
+                                          <li><a href="{{ url('about') }}">About Us</a></li>
+                                          <li><a href="{{ url('faq') }}">FAQ</a></li>
+                                          <li><a href="{{ url('search-programs') }}">Scholarships</a></li>
                                           <li><a href="#">Privacy Policy</a></li>
                                       </ul>
                                   </div>
                                   <div class="col-lg-6 col-md-6 col-sm-6">
                                       <ul class="link-list" style="font-weight: bold;">
-                                          <li><a href="single-projects.html">Testimonials</a></li>
+                                          <li><a href="{{ url('testimonial') }}">Testimonials</a></li>
                                           <li><a href="#">Terms of Service</a></li>
-                                          <li><a href="blog.html">Blog</a></li>
-                                          <li><a href="contact.html">Contact Us</a></li>
+                                          <li><a href="{{ url('blog') }}">Blog</a></li>
+                                          <li><a href="{{ url('contact') }}">Contact Us</a></li>
                                       </ul>
                                   </div>
                               </div>
@@ -34,9 +34,9 @@
                       <div class="col-xl-3 col-lg-3 col-sm-6">
                           <div class="footer-widget mb-30">
                               <div class="footer-social mt-10">
-                                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                  <a href="#"><i class="fab fa-instagram"></i></a>
-                                  <a href="#"><i class="fab fa-twitter"></i></a>
+                                  <a href="https://www.facebook.com/people/Kodo-Scholarships/100064161548720/"><i class="fab fa-facebook-f"></i></a>
+                                  <a href="https://www.instagram.com/kodoscholarships/"><i class="fab fa-instagram"></i></a>
+                                  <a href="https://twitter.com/kodoscholarship"><i class="fab fa-twitter"></i></a>
                               </div>
       
                               <div class="app-download mt-20">
