@@ -82,14 +82,14 @@
                                             <h2 class="mb-0">
                                                 <button class="faq-btn" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseThree"  >
-                                                   01 Cras turpis felis, elementum sed mi at arcu ?
+                                                   01 When is the best time to apply for a scholarship?
                                                 </button>
                                             </h2>
                                         </div>
                                         <div id="collapseThree" class="collapse show"
                                             data-bs-parent="#accordionExample">
                                             <div class="card-body">
-                                                Our community is being called to reimagine the future. As the only university where a renowned design school comes together with premier colleges, we are making learning more relevant and transformational. We are enriched by the wide range.
+                                               The best time to apply for a scholarship is within the application period set by the scholarship provider/University. Usually, scholarship applications (as well as admissions) should be done 6 months to one year before the academic year you plan to study.
                                             </div>
                                         </div>
                                     </div>
@@ -98,13 +98,13 @@
                                             <h2 class="mb-0">
                                                 <button class="faq-btn collapsed" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseOne"  >
-                                                   02 Vestibulum nibh risus, in neque eleifendulputate sem ?
+                                                   02 How do you write the scholarship essay?
                                                 </button>
                                             </h2>
                                         </div>
                                         <div id="collapseOne" class="collapse" data-bs-parent="#accordionExample">
                                             <div class="card-body">
-                                                Our community is being called to reimagine the future. As the only university where a renowned design school comes together with premier colleges, we are making learning more relevant and transformational. We are enriched by the wide range.
+                                               Did the scholarship provider provide any format? If they did, you should follow that. If they have not specified a specific format, then you can follow this simple outline when making your application/motivation letter: (1) Background/Key Qualifications, (2) Intentions for studying, (3) Expectations of the Course, and (4) your plans during and after the study. In making the letter, you should not just tell them why you need the scholarship but more importantly you should  explain clearly why you deserve to get the scholarship.
                                             </div>
                                         </div>
                                     </div>
@@ -113,13 +113,13 @@
                                             <h2 class="mb-0">
                                                 <button class="faq-btn collapsed" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseTwo"  >
-                                                  03 Donec maximus, sapien id auctor ornare ?
+                                                  03 What are the general eligibility requirements to get a scholarship?
                                                 </button>
                                             </h2>
                                         </div>
                                         <div id="collapseTwo" class="collapse" data-bs-parent="#accordionExample">
                                             <div class="card-body">
-                                              Our community is being called to reimagine the future. As the only university where a renowned design school comes together with premier colleges, we are making learning more relevant and transformational. We are enriched by the wide range.
+                                    A: The eligibility requirements vary from scholarship to scholarship. It will also depend on the level of study the scholarship supports. Based on the scholarships we have featured, some of the common qualifications include a previous University degree, proficiency in English, high academic grades, unconditional/conditional acceptance to a programme offered at a participating/host University. Aside from the eligibility requirements of the scholarship, you must also consider the eligibility requirements of the programme of study you are applying to.
                                             </div>
                                         </div>
                                     </div>   
@@ -128,13 +128,13 @@
                                             <h2 class="mb-0">
                                                 <button class="faq-btn collapsed" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseFour"  >
-                                                04 Vestibulum nibh risus, in neque eleifendulputate sem ?
+                                                04 Are there scholarships for [specific field of study] or [nationality]?
                                                 </button>
                                             </h2>
                                         </div>
                                         <div id="collapseFour" class="collapse" data-bs-parent="#accordionExample">
                                             <div class="card-body">
-                                                Our community is being called to reimagine the future. As the only university where a renowned design school comes together with premier colleges, we are making learning more relevant and transformational. We are enriched by the wide range.
+                                               There are scholarships for most fields of study and for most nationalities.  The key is just to find them. In kodo scholarships are categorized by fields of study and by target group (see the sitemap).  Click on a particular field of study or target group to view a list of available scholarships according to your criteria.
                                             </div>
                                         </div>
                                     </div>
@@ -143,13 +143,13 @@
                                             <h2 class="mb-0">
                                                 <button class="faq-btn collapsed" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseFive"  >
-                                                05 Donec maximus, sapien id auctor ornare ?
+                                                05 How do I apply for a scholarship ?
                                                 </button>
                                             </h2>
                                         </div>
                                         <div id="collapseFive" class="collapse" data-bs-parent="#accordionExample">
                                             <div class="card-body">
-                                                Our community is being called to reimagine the future. As the only university where a renowned design school comes together with premier colleges, we are making learning more relevant and transformational. We are enriched by the wide range.
+                                                The simple answer to that is to follow the application instructions given by the scholarship provider/University. The application instructions vary among scholarship providers so there is no standard way of applying to a scholarship.  The application instructions are usually outlined very clearly.  Follow the the instructions step by step so you will not get overwhelmed by the amount of information presented.
                                             </div>
                                         </div>
                                     </div>

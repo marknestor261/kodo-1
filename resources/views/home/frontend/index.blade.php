@@ -173,7 +173,7 @@
                                     <h2>A Few Words About Kodo</h2>                                   
                                 </div>
                                    <p class="txt-clr">{{ $homePageContent->section1_subtext }}</p>
-                                    <p>We are proud to offer top ranige in employment services such and asser payroll and benefits administrato managemen and asistance with global business range ployment employer  readings from religious texts or literature are also commonly inc compliance.</p>
+                                    <p>We’ve helped students win more than $10 million dollars in scholarships. We take the hassle out of the scholarship search process and increase your chances of matching you with scholarships in minutes.</p>
                                     <div class="about-content2">
                                     <div class="row">
                                     <div class="col-md-12">

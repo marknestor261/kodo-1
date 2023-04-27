@@ -37,94 +37,95 @@
               <div class="testimonial-carousel">
                 <div class="testimonial-item">
                   <div class="testimonial-image">
-                    <img src="img/grad-student-moving-tassle-over_4460x4460.jpg" alt="testimonial-1">
+                    <img src="img/testimonial/samantha.jpg" alt="testimonial-1">
                     <div class="testimonial-icon">
                       <i class="fas fa-quote-left"></i>
                     </div>
                   </div>
                   <div class="testimonial-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat.</p>
+                    <p>Thank you for giving people opportunity to know more about scholarships and opening opportunities for people to access higher education especially in developing countries.</p>
                     <div class="testimonial-meta">
-                      <span class="testimonial-name">John Doe</span>
-                      <span class="testimonial-title">CEO, XYZ Company</span>
+                      <span class="testimonial-name">Samantha Abena - </span>
+                      <span class="testimonial-title">Ghana</span>
                     </div>
                   </div>
                 </div>
                 <div class="testimonial-item">
                   <div class="testimonial-image">
-                    <img src="img/grad-student-moving-tassle-over_4460x4460.jpg" alt="testimonial-1">
+                    <img src="img/testimonial/ayesha.jpg" alt="testimonial-1">
                     <div class="testimonial-icon">
                       <i class="fas fa-quote-left"></i>
                     </div>
                   </div>
                   <div class="testimonial-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat, sapien sit amet iaculis ultrices.</p>
+                    <p>Scholars in Pakistan like in other developing countries are barred from seeking higher education due to certain prejudices. Lack of resources and social environment keep us away from the opportunities provided by the developed countries of the world. Thanks to this website which have made me think that the social and economic barriers can be surpassed with the help of the internet facilities..</p>
                     <div class="testimonial-meta">
-                      <span class="testimonial-name">John Doe</span>
-                      <span class="testimonial-title">CEO, XYZ Company</span>
+                      <span class="testimonial-name">Ayesha Patricia - </span>
+                      <span class="testimonial-title">Pakistan</span>
                     </div>
                   </div>
                 </div>
                 <div class="testimonial-item">
                   <div class="testimonial-image">
-                    <img src="img/grad-student-moving-tassle-over_4460x4460.jpg" alt="testimonial-1">
+                    <img src="img/testimonial/thomas.jpg" alt="testimonial-1">
                     <div class="testimonial-icon">
                       <i class="fas fa-quote-left"></i>
                     </div>
                   </div>
                   <div class="testimonial-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat, sapien sit amet iaculis ultrices.</p>
+                    <p>Thanks for your scholarships updates. May the Lord bless you for such a wonderful job that you have took upon yourself to educate the whole world especially Africa.</p>
                     <div class="testimonial-meta">
-                      <span class="testimonial-name">John Doe</span>
-                      <span class="testimonial-title">CEO, XYZ Company</span>
+                      <span class="testimonial-name">Thomas Adebiyi - </span>
+                      <span class="testimonial-title">Nigeria</span>
                     </div>
                   </div>
                 </div>
                  <div class="testimonial-item">
                   <div class="testimonial-image">
-                    <img src="img/grad-student-moving-tassle-over_4460x4460.jpg" alt="testimonial-1">
+                    <img src="img/testimonial/robin.jpg" alt="testimonial-1">
                     <div class="testimonial-icon">
                       <i class="fas fa-quote-left"></i>
                     </div>
                   </div>
                   <div class="testimonial-content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat, sapien sit amet iaculis ultrices</p>
+                    <p>Just a big thank you to the guys running this site. i secured a scholarship to Glasgow, all thanks to this site. Was recommended for by a friend just last month. Keep up the good job guys. God Bless!</p>
                     <div class="testimonial-meta">
-                      <span class="testimonial-name">John Doe</span>
-                      <span class="testimonial-title">CEO, XYZ Company</span>
+                      <span class="testimonial-name">Robin Kristofer - </span>
+                      <span class="testimonial-title">Estonia</span>
                     </div>
                   </div>
                 </div>
                 <div class="testimonial-item">
                   <div class="testimonial-image">
-                    <img src="img/istockphoto-818087910-612x612.jpg" alt="testimonial-2">
+                    <img src="img/testimonial/marvin.jpg" alt="testimonial-2">
                     <div class="testimonial-icon">
                       <i class="fas fa-quote-left"></i>
                     </div>
                   </div>
                   <div class="testimonial-content">
-                    <p>Nullam ornare tellus id magna sodales, eu luctus magna euismod.</p>
+                    <p>It gives me pleasure to find such opportunities online for the whole world to benefit. Thank you for reaching out to the world and for your kindness.</p>
                     <div class="testimonial-meta">
-                      <span class="testimonial-name">Jane Smith</span>
-                      <span class="testimonial-title">Marketing Director, ABC Company</span>
+                      <span class="testimonial-name">Marvin Anyango - </span>
+                      <span class="testimonial-title">Kenya</span>
                     </div>
                   </div>
                 </div>
                 <div class="testimonial-item">
                   <div class="testimonial-image">
-                    <img src="img/DSC_8276.jpg" alt="testimonial-3">
+                    <img src="img/testimonial/maria.jpg" alt="testimonial-3">
                     <div class="testimonial-icon">
                       <i class="fas fa-quote-left"></i>
                     </div>
                   </div>
                   <div class="testimonial-content">
-                    <p>Etiam ac mi velit. Pellentesque habitant morbi tristique senectus et netus et malesuada fam.</p>
+                    <p>I cannot say thank you enough for your site. Fantastic and wonderful! It is the bridge for the students of financial in need to have the opportunity to go ahead. I call more and more people and organizations to sponsor such sites..</p>
                     <div class="testimonial-meta">
-                      <span class="testimonial-name">Robert Johnson</span>
-                      <span class="testimonial-title">CTO, LMN Company</span>
+                      <span class="testimonial-name">Maria  Amihan - </span>
+                      <span class="testimonial-title">Phillipines</span>
                     </div>
                   </div>
                 </div>
+        
               </div>
             </div>
           </section>
