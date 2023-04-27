@@ -105,6 +105,13 @@ class PaymentController extends Controller
         }
     }
 
+    // GET REQUESTS
+    public function chooseMethod()
+    {
+        return view('admin.dashboard.payments.choose_method');
+    }
+
+
     
 }
 

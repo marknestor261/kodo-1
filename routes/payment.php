@@ -14,4 +14,12 @@ Route::controller(PaymentPlanController::class)->group(['prefix' => 'payment-pla
     Route::delete('/{id}', 'destroy')->name('destroy');
 });
 
-Route::get('/verify/{txref}/payment/{plan_id}', 'PaymentController@handleFlutterwaveCallback');
+
+
+Route::controller(PaymentController::class)->group(function () {
+    Route::get('verify/{txref}/payment/{plan_id}', 'handleFlutterwaveCallback');
+    Route::post('paymomo', 'payWithMomo');
+    Route::post('paycard', 'payWithCard');
+    Route::get('choose/methods', 'chooseMethod');
+});
+
