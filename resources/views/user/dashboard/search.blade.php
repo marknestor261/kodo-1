@@ -27,7 +27,7 @@
 				<!-- ROW-1 OPEN -->
 				<div class="row">
 					@foreach ($programs as $x)
-						@if ($isJob)
+						@if (auth()->user()->is_job)
 							@include('user.components.job', ['x' => $x])
 						@else
 							@include('user.components.tile', ['x' => $x])

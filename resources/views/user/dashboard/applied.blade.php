@@ -14,7 +14,7 @@
 				<div class="page-header">
 					<div>
 						<h1 class="page-title">
-							@if ($isJob)
+							@if (auth()->user()->is_job)
 								{{ 'Jobs you applied to' }}
 							@else
 								{{ 'Scholarships you applied to' }}
@@ -35,7 +35,7 @@
 				<div class="row">
                     
 					@foreach ($programs as $x)
-						@if ($isJob)
+						@if (auth()->user()->is_job)
 							@include('user.components.job', ['x' => $x])
 						@else
 							@include('user.components.tile', ['x' => $x])

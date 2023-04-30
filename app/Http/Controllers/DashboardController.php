@@ -13,8 +13,14 @@ use App\Http\Helpers\DashboardHelper;
 class DashboardController extends Controller
 {
     public function index() {
-        $programs = Scholarship::where('deadline','>', Carbon::now())->where('published', 1)->get();
-        $programs = DashboardHelper::multipleResults($programs, auth()->user()->id);
+        if(auth()->user()->is_job) {
+            $programs = Job::where('published', 1)->get();
+            $programs = DashboardHelper::multipleJobResults($programs, auth()->user()->id);
+        } else {
+            $programs = Scholarship::where('deadline','>', Carbon::now())->where('published', 1)->get();
+            $programs = DashboardHelper::multipleResults($programs, auth()->user()->id);
+        }
+        
         return view('user.dashboard.dashboard', compact('programs'));
     }
 
