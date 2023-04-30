@@ -112,6 +112,16 @@ class PaymentController extends Controller
     }
 
 
+    public function payTest($phone, $amount)
+    {
+      
+        $txref = uniqid().time();
+        $callbackUrl = "http://{$_SERVER['HTTP_HOST']}/dashboard";
+        $data = FlutterwaveHelper::initiateMobilePay($phone, true, 
+                $amount, $txref, $callbackUrl);
+        return response()->json($data);
+    }
+
     
 }
 
