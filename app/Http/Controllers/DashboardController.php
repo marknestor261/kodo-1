@@ -20,13 +20,18 @@ class DashboardController extends Controller
             $programs = Scholarship::where('deadline','>', Carbon::now())->where('published', 1)->get();
             $programs = DashboardHelper::multipleResults($programs, auth()->user()->id);
         }
-        
+
         return view('user.dashboard.dashboard', compact('programs'));
     }
 
     public function matched() {
-        $programs = Scholarship::where('deadline','>', Carbon::now())->where('published', 1)->get();
-        $programs = DashboardHelper::multipleResults($programs, auth()->user()->id);
+        if(auth()->user()->is_job) {
+            $programs = Job::where('published', 1)->get();
+            $programs = DashboardHelper::multipleJobResults($programs, auth()->user()->id);
+        } else {
+            $programs = Scholarship::where('deadline','>', Carbon::now())->where('published', 1)->get();
+            $programs = DashboardHelper::multipleResults($programs, auth()->user()->id);
+        }
         return view('user.dashboard.matched', compact('programs'));
     }
 
@@ -39,17 +44,29 @@ class DashboardController extends Controller
     }
 
     public function saved() {
-        $programs = DashboardHelper::singleStatus('saved', auth()->user()->id);
+        if(auth()->user()->is_job) {
+            $programs = DashboardHelper::singleJobStatus('saved', auth()->user()->id);
+        } else {
+            $programs = DashboardHelper::singleStatus('saved', auth()->user()->id);
+        }
         return view('user.dashboard.saved', compact('programs'));
     }
 
     public function banned() {
-        $programs = DashboardHelper::singleStatus('banned', auth()->user()->id, true);
+        if(auth()->user()->is_job) {
+            $programs = DashboardHelper::singleJobStatus('banned', auth()->user()->id, true);
+        } else {
+            $programs = DashboardHelper::singleStatus('banned', auth()->user()->id, true);
+        }
         return view('user.dashboard.banned', compact('programs'));
     }
 
     public function applied() {
-        $programs = DashboardHelper::singleStatus('applied', auth()->user()->id);
+        if(auth()->user()->is_job) {
+            $programs = DashboardHelper::singleJobStatus('applied', auth()->user()->id);
+        } else {
+            $programs = DashboardHelper::singleStatus('applied', auth()->user()->id);
+        }
         return view('user.dashboard.applied', compact('programs'));
     }
 
@@ -64,7 +81,11 @@ class DashboardController extends Controller
         $validated = $request->validate([
             'term' => 'required|min:2',
         ]);
-        $programs = DashboardHelper::search($validated, auth()->user()->id);
+        if(auth()->user()->is_job) {
+            $programs = DashboardHelper::searchJobs($validated, auth()->user()->id);
+        } else {
+            $programs = DashboardHelper::search($validated, auth()->user()->id); 
+        }
         return view('user.dashboard.search', compact('programs'));
     }
 
@@ -107,47 +128,11 @@ class DashboardController extends Controller
 
     /// JOBS
 
-    public function indexJobs() {
-        $programs = Job::where('published', 1)->get();
-        $programs = DashboardHelper::multipleJobResults($programs, auth()->user()->id);
-        return view('user.dashboard.jobs.dashboard', compact('programs'));
-    }
-
-    public function matchedJobs() {
-        $programs = Job::where('published', 1)->get();
-        $programs = DashboardHelper::multipleJobResults($programs, auth()->user()->id);
-        return view('user.dashboard.jobs.matched', compact('programs'));
-    }
-
-    public function savedJobs() {
-        $programs = DashboardHelper::singleJobStatus('saved', auth()->user()->id);
-        return view('user.dashboard.jobs.saved', compact('programs'));
-    }
-
-    public function bannedJobs() {
-        $programs = DashboardHelper::singleJobStatus('banned', auth()->user()->id, true);
-        return view('user.dashboard.jobs.banned', compact('programs'));
-    }
-
-    public function appliedJobs() {
-        $programs = DashboardHelper::singleJobStatus('applied', auth()->user()->id);
-        return view('user.dashboard.jobs.applied', compact('programs'));
-    }
-
     public function job($program_id)
     {
         $x = DashboardHelper::singleJobResult($program_id, auth()->user()->id);
         return view('user.dashboard.jobs.job
         ', compact('x'));
-    }
-
-    public function searchJobs(Request $request)
-    {
-        $validated = $request->validate([
-            'term' => 'required|min:2',
-        ]);
-        $programs = DashboardHelper::searchJobs($validated, auth()->user()->id);
-        return view('user.dashboard.jobs.search', compact('programs'));
     }
 
     public function saveJob($program_id)
