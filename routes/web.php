@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-require __DIR__.'/auth.php';
-require __DIR__.'/admin.php';
-require __DIR__.'/user.php';
-require __DIR__.'/frontend.php';
-require __DIR__.'/steps.php';
-require __DIR__.'/payment.php';
+require __DIR__.'/web/auth.php';
+require __DIR__.'/web/admin.php';
+require __DIR__.'/web/user.php';
+require __DIR__.'/web/frontend.php';
+require __DIR__.'/web/steps.php';
+require __DIR__.'/web/payment.php';
 
 
 // For Clear cache
