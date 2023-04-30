@@ -32,14 +32,7 @@ Route::post('/pay-with-flutterwave', 'PaymentController@payWithFlutterwave')->na
 Route::get('verify/{txref}/pay/momo', 'PaymentController@handleFlutterwaveCallback')->name('flutterwave.callback');
 
 
-Route::middleware(['auth', 'is_job'])->controller(DashboardController::class)->prefix('jobs')->group(function() {
-    // Route::get('dashboard', 'indexJobs')->name('dashboard.jobs');
-    // Route::get('saved', 'savedJobs')->name('saved.jobs');
-    // Route::get('banned', 'bannedJobs')->name('banned.jobs');
-    // Route::get('applied', 'appliedJobs')->name('applied.jobs');
-    // Route::get('matched', 'matchedJobs')->name('matched.jobs');
-    // Route::post('search', 'searchJobs')->name('user.search.jobs');
-    
+Route::middleware(['auth', 'is_job'])->controller(DashboardController::class)->prefix('jobs')->group(function() {    
     Route::get('ban-job/{program_id}', 'banJob')->name('user.ban.job');
     Route::get('save-job/{program_id}', 'saveJob')->name('user.save.job');
     Route::get('unsave-job/{program_id}', 'unsaveJob')->name('user.unsave.job');

@@ -131,7 +131,7 @@ class DashboardController extends Controller
     public function job($program_id)
     {
         $x = DashboardHelper::singleJobResult($program_id, auth()->user()->id);
-        return view('user.dashboard.jobs.job
+        return view('user.dashboard.job
         ', compact('x'));
     }
 
