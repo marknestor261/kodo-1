@@ -81,8 +81,9 @@ class StepController extends Controller
         ]);
         StepHelper::createUserMetaData($user);
         event(new Registered($user));
-        Auth::login($user);
-        return redirect(RouteServiceProvider::HOME);
+        return redirect(route('verification.notice'));
+        // Auth::login($user);
+        // return redirect(RouteServiceProvider::HOME);
     }
 }
 

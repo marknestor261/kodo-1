@@ -46,7 +46,9 @@ class Admin extends Seeder
       
     ]);
         AboutPage::create([
-        'section1_main_text1' => 'Find life changing scholarships made for you.', 
+        'section1_main_text1' => 'Find life changing scholarships made for you.',
+        'section1_subtext2' => "_" ,
+        'section5_main_text2' => '_'
         
 
       

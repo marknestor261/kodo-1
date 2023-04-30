@@ -22,7 +22,7 @@ class DashboardController extends Controller
         $body = 'Custom Email Body';
         $subject = "Subject test";
 
-        Mail::to('example@gmail.com')->send(new CustomEmail($title, $body));
+        Mail::to('rwsenfuka@gmail.com')->send(new CustomEmail($title, $body));
 
     }
 

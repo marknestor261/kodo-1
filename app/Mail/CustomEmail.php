@@ -24,6 +24,6 @@ class CustomEmail extends Mailable
     {
         return $this->view('emails.custom-email-template')
                     ->subject('Custom Email Subject')
-                    ->from('email@email.com', 'Your Name');
+                    ->from('no-reply@kodoscholarships.com', 'Your Name');
     }
 }
