@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +21,8 @@ require __DIR__.'/web/user.php';
 require __DIR__.'/web/frontend.php';
 require __DIR__.'/web/steps.php';
 require __DIR__.'/web/payment.php';
+
+Route::get('test_mail', [\App\Http\Controllers\DashboardController::class,'testEmail']);
 
 
 // For Clear cache

@@ -10,9 +10,22 @@ use App\Models\UserMetaData;
 use Carbon\Carbon;
 use App\Http\Helpers\DashboardHelper;
 use App\Models\Job;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CustomEmail;
+
 
 class DashboardController extends Controller
 {
+    public function testEmail()
+    {
+        $title = 'Custom Email Title';
+        $body = 'Custom Email Body';
+        $subject = "Subject test";
+
+        Mail::to('example@gmail.com')->send(new CustomEmail($title, $body));
+
+    }
+
     public function index() {
         if(auth()->user()->is_job) {
             $programs = Job::where('published', 1)->get();
