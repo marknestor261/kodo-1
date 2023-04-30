@@ -26,9 +26,13 @@
                 
 				<!-- ROW-1 OPEN -->
 				<div class="row">
-                    @foreach ($programs as $x)
-                        @include('user.components.tile', ['x' => $x])
-                    @endforeach
+					@foreach ($programs as $x)
+						@if ($isJob)
+							@include('user.components.job', ['x' => $x])
+						@else
+							@include('user.components.tile', ['x' => $x])
+						@endif
+					@endforeach
                 </div>
             </div>
         </div>

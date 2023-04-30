@@ -13,7 +13,13 @@
                 <!-- PAGE-HEADER -->
 				<div class="page-header">
 					<div>
-						<h1 class="page-title">Matched Scholarships </h1>
+						<h1 class="page-title">
+							@if ($isJob)
+								{{ 'Matched Jobs' }}
+							@else
+								{{ 'Matched Scholarships' }}
+							@endif
+							</h1>
 					</div>
 					<div class="ms-auto pageheader-btn">
 						<ol class="breadcrumb">
@@ -29,7 +35,11 @@
 				<div class="row">
                     
                     @foreach ($programs as $x)
-                        @include('user.components.tile', ['x' => $x])
+						@if ($isJob)
+                        	@include('user.components.job', ['x' => $x])
+						@else
+                        	@include('user.components.tile', ['x' => $x])
+						@endif
                     @endforeach
                 </div>
             </div>
