@@ -15,7 +15,7 @@ Route::middleware('auth')->controller(DashboardController::class)->group(functio
     Route::middleware(['is_paid'])->group(function() {
         Route::get('scholarships/{program_id}', 'scholarship')->name('user.scholarship');
         Route::get('apply-scholarship/{program_id}', 'applyProgram')->name('user.apply');
-        Route::get('jobs/{job_id}', 'scholarship')->name('user.job');
+        Route::get('jobs/{job_id}', 'job')->name('user.job');
         Route::get('apply-job/{job_id}', 'applyProgram')->name('user.apply.job');
     });
     // ========================
