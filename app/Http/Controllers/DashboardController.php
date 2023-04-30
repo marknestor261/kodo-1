@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\UserMetaData;
 use Carbon\Carbon;
 use App\Http\Helpers\DashboardHelper;
+use App\Models\Job;
 
 class DashboardController extends Controller
 {
