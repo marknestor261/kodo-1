@@ -205,7 +205,7 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="section-title mb-35 wow fadeInDown animated" data-animation="fadeInDown" data-delay=".4s">
                                 <h2>Our Best Features</h2>
-                                <p>Special wedding garments are often worn, and the ceremony is sometimes followed by a wedding reception. Music, poetry.</p>
+                                <p>We have developed deep expertise in Education Technology and Communication support.</p>
                             </div>
                             <ul class="pr-20">
                                 <li>
@@ -214,8 +214,8 @@
                                             <div class="date-box"><img src="img/icon/fea-icon01.png" alt="icon"></div>
                                         </div>
                                         <div class="text">
-                                            <h3>Skilled Teachers</h3>
-                                            <p>Special wedding garments are often worn, and the ceremony is sttimes followed by a wedding reception. Music, poetry, prayers, or readings from.</p>
+                                            <h3>Kodo AI</h3>
+                                            <p>Our kodo scholarship AI will compare your profile to thousands of active scholarships to create a prioritized list of opportunities. You’ll be able to sort by level effort, due dates and award amount.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -225,8 +225,8 @@
                                              <div class="date-box"><img src="img/icon/fea-icon02.png" alt="icon"></div>
                                         </div>
                                         <div class="text">
-                                            <h3>Affordable Courses</h3>
-                                            <p>Special wedding garments are often worn, and the ceremony is sttimes followed by a wedding reception. Music, poetry, prayers, or readings from.</p>
+                                            <h3>Expert Support</h3>
+                                            <p>Experience peace of mind with our extensive all-season support team , providing you with the resources and guidance you need.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -236,8 +236,8 @@
                                            <div class="date-box"><img src="img/icon/fea-icon03.png" alt="icon"></div>
                                         </div>
                                         <div class="text">
-                                            <h3>Efficient & Flexible</h3>
-                                            <p>Special wedding garments are often worn, and the ceremony is sttimes followed by a wedding reception. Music, poetry, prayers, or readings from.</p>
+                                            <h3>Application Process</h3>
+                                            <p>Take control of your success with our extensive feature-rich dashboard, to provide you with a comprehensive view of your progress and personalized insights to help you reach your full potential.</p>
                                         </div>
                                     </div>
                                 </li>
@@ -267,7 +267,7 @@
                         <div class="col-xl-6 col-lg-6 col-md-12">
                             <div class="section-title cta-title video-title wow fadeInLeft animated" data-animation="fadeInDown animated" data-delay=".2s">
                                 <h2> We're <span>Kodo</span> & We're Diffirent</h2>
-                                <p>Our community is being called to reimagine the future. As the only university where a renowned design school  colleges, </p>	
+                                <p>Kodo Search reduces the scholarship search process from months to minutes by matching students with opportunities made for them.</p>	
                             </div>
                                              
                         </div>
