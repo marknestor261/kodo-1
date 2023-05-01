@@ -177,11 +177,11 @@
                                     <div class="about-content2">
                                     <div class="row">
                                     <div class="col-md-12">
-                                     <ul class="green2">                                              
-                                                <li><div class="abcontent"><div class="ano"><span>01</span></div> <div class="text"><h3>Doctoral Degrees</h3> <p>consectetur adipiscing elit sed do eiusmod tem incid idunt.</p></div></div></li>
-                                                <li><div class="abcontent"><div class="ano"><span>02</span></div> <div class="text"><h3>Global Students</h3> <p>consectetur adipiscing elit sed do eiusmod tem incid idunt.</p></div></div></li>
+                                     <!--<ul class="green2">                                              -->
+                                     <!--           <li><div class="abcontent"><div class="ano"><span>01</span></div> <div class="text"><h3>Doctoral Degrees</h3> <p>consectetur adipiscing elit sed do eiusmod tem incid idunt.</p></div></div></li>-->
+                                     <!--           <li><div class="abcontent"><div class="ano"><span>02</span></div> <div class="text"><h3>Global Students</h3> <p>consectetur adipiscing elit sed do eiusmod tem incid idunt.</p></div></div></li>-->
                                                 
-                                           </ul>
+                                     <!--      </ul>-->
                                     </div>
                                     </div>
                                 </div>
