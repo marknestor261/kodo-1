@@ -34,33 +34,7 @@
         <!-- main-area -->
         <main>
             
-           <!-- breadcrumb-area -->
-            <!-- <section class="breadcrumb-area d-flex  p-relative align-items-center" style="background-image:url(img/bg/bdrc-bg.png)">
-              
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-12 col-lg-12">
-                            <div class="breadcrumb-wrap text-left">
-                                <div class="breadcrumb-title">
-                                    <h2>Faq</h2>    
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="breadcrumb-wrap2">
-                              
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Faq</li>
-                                    </ol>
-                                </nav>
-                            </div>
-                        
-                    </div>
-                </div>
-            </section> -->
-            <!-- breadcrumb-area-end -->   
+         
              <!-- event-area -->
             <section class="event event03 pt-150 pb-120 p-relative fix">
                 <div class="container">
@@ -159,41 +133,7 @@
                     </div>
                 </div>
             </section>
-           <!-- event-area -->
-			 
-         <!-- brand-area -->
-            <!-- <div class="brand-area pt-60 pb-60" style="background-color:#125875">
-                <div class="container">
-                    <div class="row brand-active">
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                                <img src="img/brand/b-logo1.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                                 <img src="img/brand/b-logo2.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                                 <img src="img/brand/b-logo3.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                                  <img src="img/brand/b-logo4.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                                 <img src="img/brand/b-logo5.png" alt="img">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- brand-area-end -->        
+        
         </main>
         <!-- main-area-end -->
         <!-- footer -->

@@ -60,7 +60,7 @@
                                    <img src="img/bg/contact-icon01.png" alt="image">
                                 </div>
                                <div class="services-content2">
-                                    <h5><a href="tel:+14440008888">+46 72 848 83 13</a></h5>   
+                                    <h5><a href="tel:+46728488313">+46 72 848 83 13</a></h5>   
                                     <p>Phone Support</p>
                                 </div>
                             </div>   

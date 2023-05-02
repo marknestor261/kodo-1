@@ -35,3 +35,7 @@ Route::get('testimonial',[\App\Http\Controllers\FrontEndPagesController::class,'
 Route::get('contact',[\App\Http\Controllers\FrontEndPagesController::class,'contactPage'])->name('frontend.contact');
 
 Route::get('blog',[\App\Http\Controllers\FrontEndPagesController::class,'blogPage'])->name('frontend.blog');
+
+Route::get('landing', [\App\Http\Controllers\FrontEndPagesController::class, 'landingPage'])->name('frontend.landing');
+
+Route::get('forgot', [\App\Http\Controllers\FrontEndPagesController::class, 'forgotPage'])->name('frontend.forgot');

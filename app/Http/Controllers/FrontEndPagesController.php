@@ -54,6 +54,16 @@ class FrontEndPagesController extends Controller
         $blogPageContent = BlogPage::first();
         return view('home.frontend.blog', compact('blogPageContent'));
     }
+    public function landingPage()
+    {
+        $homePageContent = HomePage::first();
+        return view('home.frontend.landing', compact('homePageContent'));
+    }
+    public function forgotPage()
+    {
+        $homePageContent = HomePage::first();
+        return view('home.frontend.forgot', compact('homePageContent'));
+    }
 
     
 }

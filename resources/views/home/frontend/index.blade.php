@@ -326,7 +326,7 @@
                        <div class="col-lg-4 col-md-6">
                             <div class="single-post2 hover-zoomin mb-30 wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                                 <div class="blog-thumb2">
-                                    <a href="{{ url('blog') }}"><img src="img/AIG-Scholarships.jpg" alt="img"></a>
+                                    <a href="{{ url('blog') }}"><img src="{{ asset('img/blog/muslim.jpg') }}" alt="img"></a>
                                      <div class="date-home">
                                         <i class="fal fa-calendar-alt"></i> 24th March 2023
                                     </div>
@@ -340,8 +340,8 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <h4><a href="{{ url('blog') }}">South African student gets familiar with biomedical-engineering.</a></h4> 
-                                    <p>Curabitur sagittis libero tincidunt tempor finibus. Mauris at dignissim ligula, nec tristique orci.</p>
+                                    <h4><a href="{{ url('blog') }}">How to Write a Scholarship Essay and Win BIG [2022 Edition].</a></h4> 
+                                    <p>With a new school year here, now’s the perfect time to get serious about searching for... </p>
                                     <div class="blog-btn"><a href="{{ url('blog') }}">Read More <i class="fal fa-long-arrow-right"></i></a></div>
                                 </div>
                             </div>
@@ -349,7 +349,7 @@
                          <div class="col-lg-4 col-md-6">
                             <div class="single-post2 mb-30 hover-zoomin wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                                 <div class="blog-thumb2">
-                                    <a href="{{ url('blog') }}"><img src="{{ asset('img/istockphoto-818087910-612x612.jpg') }}" alt="img"></a>
+                                    <a href="{{ url('blog') }}"><img src="{{ asset('img/blog/gamers.jpg') }}" alt="img"></a>
                                      <div class="date-home">
                                         <i class="fal fa-calendar-alt"></i> 24th March 2023
                                     </div>
@@ -364,8 +364,8 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <h4><a href="{{ url('blog') }}">Kodo has reached 10k.</a></h4> 
-                                    <p>Curabitur sagittis libero tincidunt tempor finibus. Mauris at dignissim ligula, nec tristique orci.</p>
+                                    <h4><a href="{{ url('blog') }}">How To Know If You Qualify For Need Based Financial Aid</a></h4> 
+                                    <p>The cost of your college education can be intimidating. Which is why it’s important...</p>
                                     <div class="blog-btn"><a href="{{ url('blog') }}">Read More <i class="fal fa-long-arrow-right"></i></a></div>
                                 </div>
                             </div>
@@ -373,7 +373,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="single-post2 mb-30 hover-zoomin wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                                 <div class="blog-thumb2">
-                                    <a href="{{ url('blog') }}"><img src="{{ asset('img/OCC_Default_Banner_OCC.jpg') }}" alt="img"></a>
+                                    <a href="{{ url('blog') }}"><img src="{{ asset('img/blog/interracial.jpg') }}" alt="img"></a>
                                      <div class="date-home">
                                         <i class="fal fa-calendar-alt"></i> 24th March 2023
                                     </div>
@@ -388,8 +388,8 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <h4><a href="{{ url('blog') }}">Graduation ceremoney held at University of.</a></h4> 
-                                    <p>Curabitur sagittis libero tincidunt tempor finibus. Mauris at dignissim ligula, nec tristique orci.</p>
+                                    <h4><a href="{{ url('blog') }}">5 Expert Tips on How to Apply for Scholarships [2022 Edition]</a></h4> 
+                                    <p>Scholarships are, undoubtedly, the best form of financial aid. They’re free money to pay for college!</p>
                                     <div class="blog-btn"><a href="{{ url('blog') }}">Read More <i class="fal fa-long-arrow-right"></i></a></div>
                                 </div>
                             </div>

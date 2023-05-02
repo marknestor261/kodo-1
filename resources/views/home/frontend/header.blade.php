@@ -25,7 +25,7 @@
                                 <li><a href="{{ url('blog') }}">Blog</a></li>
                                 <!-- Add the new list item here -->
                                 <div id="mobile-menu-buttons">
-                                    <li><a href="{{ url('login') }}" class="mobile-btn" style="background-color: #ffffff; color: #000; border: 2px solid #000; height: auto;  width: 85px; text-align: center;padding: 5px 5px 5px 5px; margin-bottom: 1px; margin-left: 8px; margin-top:20px; border-radius: 80px;">Login</a></li>
+                                    <li><a href="{{ url('landing') }}" class="mobile-btn" style="background-color: #ffffff; color: #000; border: 2px solid #000; height: auto;  width: 85px; text-align: center;padding: 5px 5px 5px 5px; margin-bottom: 1px; margin-left: 8px; margin-top:20px; border-radius: 80px;">Login</a></li>
                                     <li><a href="https://kodoscholarships.com/search-programs" class="mobile-btn" style="background-color: #ec1d64; height: auto; color: #ffffff; width: 250px; padding: 10px 20px; margin-bottom: 10px;margin-top: 30px; margin-left: 8px; border-radius: 80px;text-align: center;">Find scholarships</a></li>
                                   </div>
                                   
@@ -41,7 +41,7 @@
                         <ul>
                           <li>
                             <div class="second-header-btn">
-                              <a href="{{ url('login') }}" class="btn" style=" border: 1px solid #fff; background-color: #fff; color: #000;z-index: 999;">Login</a>
+                              <a href="{{ url('landing') }}" class="btn" style=" border: 1px solid #fff; background-color: #fff; color: #000;z-index: 999;">Login</a>
                             </div>
                           </li>
                           <li>
