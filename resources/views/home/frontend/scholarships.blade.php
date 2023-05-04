@@ -3541,7 +3541,7 @@
                                                     data-id="fa8d41d" data-element_type="widget"
                                                     data-widget_type="text-editor.default">
                                                     <div class="elementor-widget-container">
-                                                        Kodo.com</div>
+                                                        kodoscholarships.com</div>
                                                 </div>
                                             </div>
                                         </div>

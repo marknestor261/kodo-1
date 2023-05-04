@@ -42,7 +42,7 @@
         </div>
         <div class="card-body">
           <p class="card-text text-center"> We’ve helped students win more than $10 million dollars in scholarships. </p>
-          <a href="{{ url('login') }}" class="btn ss-btn w-100">Login</a>
+          <a href="{{ route('search') }}" class="btn ss-btn w-100">Search Programs</a>
         </div>
       </div>
     </div>
