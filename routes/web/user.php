@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 
 
-Route::get('pass', function () { return view('home.frontend.reset-password'); });
+// Route::get('pass', function () { return view('home.frontend.reset-password'); });
 
 Route::middleware(['auth', 'verified'])->controller(DashboardController::class)->group(function() {
     Route::get('dashboard', 'index')->name('dashboard');
