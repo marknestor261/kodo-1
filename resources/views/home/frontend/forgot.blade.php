@@ -46,10 +46,11 @@
                                     <span class="card-title">Forgot Password</span>
                                 </div>
                                 <div class="card-body">
-                                    <form action="#" method="post">
+                                    <form method="POST" action="{{ route('password.email') }}">
+                                        @csrf
                                         <div style="padding-bottom: 30px;" class="form-group">
                                             <!-- <label for="email">Email address</label> -->
-                                            <input style="border: none;" type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                                            <input style="border: none;" type="email" class="form-control" id="email" name="email" :value="old('email')" required autofocus placeholder="Enter email">
                                         </div>
                                         <button type="submit" class="btn btn-primary w-100">Reset Password</button>
                                     </form>

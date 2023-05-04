@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 
-Route::middleware('auth')->controller(DashboardController::class)->group(function() {
+
+Route::get('pass', function () { return view('home.frontend.reset-password'); });
+
+Route::middleware(['auth', 'verified'])->controller(DashboardController::class)->group(function() {
     Route::get('dashboard', 'index')->name('dashboard');
     Route::get('saved', 'saved')->name('saved');
     Route::get('banned', 'banned')->name('banned');
@@ -28,17 +31,17 @@ Route::middleware('auth')->controller(DashboardController::class)->group(functio
     Route::get('payment', function () { return view('user.dashboard.payment.plans'); })->name('payment.plans');
 
 });
-Route::post('/pay-with-flutterwave', 'PaymentController@payWithFlutterwave')->name('flutterwave.pay');
-Route::get('verify/{txref}/pay/momo', 'PaymentController@handleFlutterwaveCallback')->name('flutterwave.callback');
+// Route::post('/pay-with-flutterwave', 'PaymentController@payWithFlutterwave')->name('flutterwave.pay');
+// Route::get('verify/{txref}/pay/momo', 'PaymentController@handleFlutterwaveCallback')->name('flutterwave.callback');
 
 
-Route::middleware(['auth', 'is_job'])->controller(DashboardController::class)->prefix('jobs')->group(function() {    
+Route::middleware(['auth', 'verified', 'is_job'])->controller(DashboardController::class)->prefix('jobs')->group(function() {    
     Route::get('ban-job/{program_id}', 'banJob')->name('user.ban.job');
     Route::get('save-job/{program_id}', 'saveJob')->name('user.save.job');
     Route::get('unsave-job/{program_id}', 'unsaveJob')->name('user.unsave.job');
     Route::get('unban-job/{program_id}', 'unbanJob')->name('user.unban.job');
 });
-    Route::get('payment', function () { return view('dashboard.user.user_payment'); })->name('payment');
-    Route::post('/pay-with-flutterwave', 'PaymentController@payWithFlutterwave')->name('flutterwave.pay');
+    // Route::get('payment', function () { return view('dashboard.user.user_payment'); })->name('payment');
+    // Route::post('/pay-with-flutterwave', 'PaymentController@payWithFlutterwave')->name('flutterwave.pay');
 
 
