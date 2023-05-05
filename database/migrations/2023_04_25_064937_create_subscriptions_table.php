@@ -18,8 +18,8 @@ class CreateSubscriptionsTable extends Migration
             $table->foreignId('user_id')->constrained;
             $table->foreignId('plan_id')->constrained;
             $table->foreignId('transaction_id')->constrained;
-            $table->timestamp('start_date');
-            $table->timestamp('end_date');
+            $table->timestamp('start_date')->nullable();
+            $table->timestamp('end_date')->nullable();
             $table->string('status')->default('active');
             $table->timestamps();
         });

@@ -23,6 +23,7 @@
                                 <li><a href="{{ url('testimonial') }}">Testimonials</a></li>
                                 <li><a href="{{ url('contact') }}">Contact</a></li>
                                 <li><a href="{{ url('blog') }}">Blog</a></li>
+                                <li><a href="{{ url('payform') }}">PayForm</a></li>
                                 <!-- Add the new list item here -->
                                 <div id="mobile-menu-buttons">
                                     <li><a href="{{ url('landing') }}" class="mobile-btn" style="background-color: #ffffff; color: #000; border: 2px solid #000; height: auto;  width: 85px; text-align: center;padding: 5px 5px 5px 5px; margin-bottom: 1px; margin-left: 8px; margin-top:20px; border-radius: 80px;">Login</a></li>

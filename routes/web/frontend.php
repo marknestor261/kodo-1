@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 // FRONTEND ==================================================
 // Route::get('/', function () {
 //     return view('home.frontend.index');
@@ -39,3 +38,8 @@ Route::get('blog',[\App\Http\Controllers\FrontEndPagesController::class,'blogPag
 Route::get('landing', [\App\Http\Controllers\FrontEndPagesController::class, 'landingPage'])->name('frontend.landing');
 
 Route::get('forgot', [\App\Http\Controllers\FrontEndPagesController::class, 'forgotPage'])->name('frontend.forgot');
+
+//testing payment
+Route::get('payform', [\App\Http\Controllers\FrontEndPagesController::class, 'payformPage'])->name('frontend.payform');
+Route::post('payfluter', [\App\Http\Controllers\FrontEndPagesController::class, 'payFluter'])->name('frontend.payfluter');
+Route::get('paymentstatus', [\App\Http\Controllers\FrontEndPagesController::class, 'paymentStatus'])->name('frontend.paymentstatus');
