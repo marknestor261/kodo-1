@@ -100,6 +100,7 @@ class FrontEndPagesController extends Controller
 			'customer_email' => $request->email,
             ///'redirect_url' => '',
 		);
+        //put here a redirect url after successful payment
         $data['redirect_url'] =  '';
 
 		$this->response = $this->create_payment($data);
@@ -132,8 +133,6 @@ class FrontEndPagesController extends Controller
 				$response = json_decode($response,1);
 				if($response['status'] == 'success' && isset($response['data']['chargecode']) && ( $response['data']['chargecode'] == '00' || $response['data']['chargecode'] == '0') ){
 					$transaction_id = $response['data']['txref'];
-
-					//$data['payment_plan']    = $response['data']['paymentplan'];
 					$data['customer_email']         = $response['data']['custemail'];
 					$data['txn_id']         = $transaction_id;
 					$data['amount']    = $response['data']['amount'];
