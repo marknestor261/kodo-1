@@ -41,7 +41,7 @@
                             <a href={{ url('/') }} class="fxt-logo"><img src={{ asset('kodo-logo.png') }} alt="Logo"></a>
                             <div class="fxt-page-switcher">
                                 <a href="#!" class="switcher-text1 active">Log In</a>
-                                <a href={{ url('/') }} class="switcher-text1">Home</a>
+                                <a href={{ route('frontend.landing') }} class="switcher-text1">Sign Up</a>
                             </div>
                         </div>
                         <div class="fxt-form">
@@ -67,7 +67,7 @@
                                     <div class="fxt-transformY-50 fxt-transition-delay-3">
                                         <div class="fxt-content-between">
                                             <button type="submit" class="fxt-btn-fill">Log in</button>
-                                            <a href="#!" class="switcher-text2">Forgot Password</a>
+                                            <a href="{{ route('password.request') }}" class="switcher-text2">Forgot Password</a>
                                         </div>
                                     </div>
                                 </div>

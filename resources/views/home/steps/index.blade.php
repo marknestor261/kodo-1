@@ -2,7 +2,7 @@
 <html lang="en-US" prefix="og: https://ogp.me/ns#">
 
 <head>
-<title>Scholarship Search &ndash; Kodo.com</title>
+<title>Scholarship Search &ndash; Kodo</title>
     <link rel="preconnect" href="https://api.mobius.highereducation.com/" />
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
 
